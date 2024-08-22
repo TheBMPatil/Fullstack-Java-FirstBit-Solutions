@@ -1,7 +1,9 @@
 #include <stdio.h>
+void armstrongInRange();
+
 void main()
 {
-    printf("Waht do you want to do : \n 1> Armstrong Numbers in range. \n 2> Prime numbers in range \n");
+    printf("What do you want to do : \n 1> Armstrong Numbers in range. \n 2> Prime numbers in range \n");
     printf("3> Perfect Numbers in range. \n 4> Strong numbers in range \n Enter Your choice (1,2,3,4) :");
     int ch;
     scanf("%d", &ch);
@@ -25,15 +27,13 @@ void main()
     {
         printf("Invalid choice");
     }
-
-    armstrongInRange();
 }
 void armstrongInRange()
 {
     int start, end;
-    printf("Enter The range start :");
+    printf("\n Enter The range start :");
     scanf("%d", &start);
-    printf("Enter The range end :");
+    printf("\n Enter The range end :");
     scanf("%d", &end);
 
     for (int i = start; i <= end; i++)

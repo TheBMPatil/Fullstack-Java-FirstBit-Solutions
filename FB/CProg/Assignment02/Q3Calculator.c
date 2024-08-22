@@ -5,8 +5,8 @@ void main()
 {
     // To be accepted from user in future when i will learn about scanf
 
-    int A = 12, B = 0;
-    char op = 'D';
+    int A = 12, B = 6;
+    char op = 'A';
 
     if (op == 'A')
     {
