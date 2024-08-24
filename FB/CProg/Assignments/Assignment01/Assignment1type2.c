@@ -2,9 +2,14 @@
 void tempConvert();
 void areaAndPerimetere();
 void sumOfDigitAndReverse();
-void evenOdd();
-void salary();
+int evenOdd();
+float salary();
 void marriageEligibility();
+
+float circumference();
+float areaofCircle();
+int perimeter();
+int areaofRect();
 
 void main()
 {
@@ -36,11 +41,18 @@ void main()
     }
     else if (ch == 4)
     {
-        evenOdd();
+        if (evenOdd())
+        {
+            printf("Number is Even \n");
+        }
+        else
+        {
+            printf("Number is odd.");
+        }
     }
     else if (ch == 5)
     {
-        salary();
+        printf("Total Salary is : %f ", totalSalarysalary());
     }
     else if (ch == 6)
     {
@@ -56,21 +68,42 @@ void tempConvert()
 }
 void areaAndPerimetere()
 {
+    printf("%.2f is area of Circle...! \n", areaofCircle());
+    printf("\n");
+    printf("%d is area of Rectangle...! \n", areaofRect());
+    printf("\n");
+    printf("%d is Perimeter of Rectangle..! \n", perimeter());
+    printf("\n");
+    printf("%.2f is Circumference of circle..! \n", circumference());
+}
+float areaofCircle()
+{
+    const float PI = 3.14;
+    float radious = 9.0;
+    float areaOfCir = PI * (radious * radious);
+    return areaOfCir;
+}
+int areaofRect()
+{
+    int L = 15, W = 45;
+    int areaOfRect = L * W;
+    return areaOfRect;
+}
+int perimeter()
+{
     int L = 15, W = 45;
     int areaOfRect = L * W;
     int periMeter = 2 * (L + W);
-    printf("Length of Rectangle: %d, Width: %d \nArea of Reactangle: %d \n", L, W, areaOfRect);
-    printf("Perimeter of Reactangle: %d \n ", periMeter);
-
-    printf("\n");
-
-    float radious = 9.0;
-    const float PI = 3.14;
-    float Circumference = 2.0 * PI * radious;
-    float areaOfCircle = PI * (radious * radious);
-    printf("Radious of circle is: %f \nCircumference of that circle is: %f \n", radious, Circumference);
-    printf("Area of that circle is: %f \n", areaOfCircle);
+    return periMeter;
 }
+float circumference()
+{
+    const float PI = 3.14;
+    float radious = 9.0;
+    float Circumfer = 2.0 * PI * radious;
+    return Circumfer;
+}
+
 void sumOfDigitAndReverse()
 {
     int num = 234;
@@ -97,19 +130,19 @@ void sumOfDigitAndReverse()
 
     printf("Sum of %d digits is: %d \n Also Reverse of num: %d", num, sum, rev);
 }
-void evenOdd()
+int evenOdd()
 {
     int num = 7;
     if (num % 2 == 0)
     {
-        printf("Number %d is Even.", num);
+        return 1;
     }
     else
     {
-        printf("Number %d is Odd.", num);
+        return 0;
     }
 }
-void salary()
+float salary()
 {
     float baseSalary = 7777.0, totalSalary;
     float DA, TA, HRA;
@@ -126,7 +159,7 @@ void salary()
         HRA = 0.30 * baseSalary;
     }
     totalSalary = DA + TA + HRA + baseSalary;
-    printf("Total Salary for bsae %f is : %f ", baseSalary, totalSalary);
+    return totalSalary;
 }
 void marriageEligibility()
 {
