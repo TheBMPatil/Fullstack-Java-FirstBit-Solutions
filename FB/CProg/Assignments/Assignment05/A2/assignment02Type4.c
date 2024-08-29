@@ -1,16 +1,17 @@
 #include <stdio.h>
-void discount();
-void greatestOfThree();
+float discount(float);
+int greatestOfThree(int, int, int);
 void calculator();
+int addition(int, int);
 void UseChoice();
-void discountStudent();
+int substraction(int, int);
+int multiplication(int, int);
+int division(int, int);
 
-int addition();
-int substraction();
-int multiplication();
-float division();
-int evenOdd();
-float salary();
+int greatOfThree(int, int, int);
+float discountStudent(float, char);
+void evenOdd(int);
+void salary(float);
 
 void main()
 {
@@ -32,11 +33,20 @@ void main()
         }
         else if (ch == 1)
         {
-            discount();
+            float Op;
+            printf("Enter Original Price broo:");
+            scanf("%f", &Op);
+            printf("%.4f is final Price \n ", discount(Op));
         }
         else if (ch == 2)
         {
-            greatestOfThree();
+            printf("Gretest of Three Numbers \n");
+            // get value of a b c from user
+            printf("\n Enter 3 Numbers :");
+            int A, B, C;
+            scanf("%d%d%d", &A, &B, &C);
+
+            printf("%d is greatest. \n", greatestOfThree(A, B, C));
         }
         else if (ch == 3)
         {
@@ -48,7 +58,12 @@ void main()
         }
         else if (ch == 5)
         {
-            discountStudent();
+            float price, finalprice;
+            printf("Enter Price of the product : \n");
+            scanf("%f", &price);
+            printf("Are you a Student ? (Y/N) \n");
+            char std = getch();
+            printf("%.2f is Final Price. \n", discountStudent(price, std));
         }
         else if (ch == 0)
         {
@@ -56,55 +71,36 @@ void main()
         }
     }
 }
-void discount()
+float discount(float Op)
 {
-    float Op;
-    printf("Enter Original Price broo:");
-    scanf("%f", &Op);
+
     float finalPrice;
     if (Op <= 1000)
     {
         finalPrice = Op - (0.05 * Op);
-        printf("%.2f is final price with 5%% discount on original price %.2f ", finalPrice, Op);
+        return finalPrice;
     }
     else if (Op <= 5000)
     {
         finalPrice = Op - (0.10 * Op);
-        printf("%.2f is final price with 10%% discount on original price %.2f ", finalPrice, Op);
+        return finalPrice;
     }
     else if (Op <= 10000)
     {
         finalPrice = Op - (0.20 * Op);
-        printf("%.2f is final price with 20%% discount on original price %.2f  ", finalPrice, Op);
+        return finalPrice;
     }
     else if (Op > 10000)
     {
         finalPrice = Op - (0.25 * Op);
-        printf("%.2f is final price with 25%% discount on original price %.2f ", finalPrice, Op);
+        return finalPrice;
     }
 }
-void greatestOfThree()
+int greatestOfThree(int A, int B, int C)
 {
-    int A, B, C;
-    printf("Enter Three Numbers : ");
-    scanf("%d%d%d", &A, &B, &C);
-    // if (A > B && A > C)
-    // {
-    //     printf("%d A is greatest.", A);
-    // }
-    // else if (B > C)
-    // {
-    //     printf("%d B is greatest.", B);
-    // }
-    // else
-    // {
-    //     printf("%d C is greatest.", C);
-    // }
 
-    // using Ternary operator
-    printf("\n");
-    printf("%d is the greatest.", A > B && A > C ? A : B > C ? B
-                                                             : C);
+    return A > B && A > C ? A : B > C ? B
+                                      : C;
 }
 void calculator()
 {
@@ -114,44 +110,52 @@ void calculator()
     printf("M Multiplication \n");
     printf("D Dividion \n");
     char op = getch();
-    // printf("%c", op);
+    int A, B;
 
     if (op == 'A')
     {
         printf("Chosen Operation is Addition.. \n ");
-        printf("%d is addition. \n", addition());
+        printf("Enter Two numbers : ");
+        scanf("%d%d", &A, &B);
+        printf("%d is Addition.", addition(A, B));
     }
     else if (op == 'S')
     {
         printf("Chosen Operation is Substraction.. \n ");
-        printf("%d is Substraction.", substraction());
+        printf("Enter Two numbers : ");
+        scanf("%d%d", &A, &B);
+        printf("%d is Substraction.", substraction(A, B));
     }
     else if (op == 'M')
     {
         printf("Chosen Operation is Multiplication.. \n ");
-        printf("%d is Multiplication.", multiplication());
+        printf("Enter Two numbers : ");
+        scanf("%d%d", &A, &B);
+        printf("%d is Multiplication ", multiplication(A, B));
     }
     else if (op == 'D')
     {
+        printf("Enter Two numbers : ");
+        scanf("%d%d", &A, &B);
         printf("Chosen Operation is Division.. \n ");
-        printf("%.2f is result of division.", division());
+        printf("%d is Division \n", division(A, B));
     }
 }
 
-int addition()
+int addition(int A, int B)
 {
-    printf("Enter Two numbers : ");
-    int A, B;
-    scanf("%d%d", &A, &B);
     return (A + B);
 }
 
-float division()
+int division(int A, int B)
 {
-    printf("Enter Two numbers : ");
-    int A, B;
-    scanf("%d%d", &A, &B);
-    if (A < B)
+
+    if (A == 0 || B == 0)
+    {
+        printf("Divide by zero exception !!!");
+        return 0;
+    }
+    else if (A < B)
     {
         return (B / A);
     }
@@ -161,19 +165,14 @@ float division()
     }
 }
 
-int substraction()
+int substraction(int A, int B)
 {
-    printf("Enter Two numbers : ");
-    int A, B;
-    scanf("%d%d", &A, &B);
-    return (A - B);
+
+    return (B - A);
 }
 
-int multiplication()
+int multiplication(int A, int B)
 {
-    printf("Enter Two numbers : ");
-    int A, B;
-    scanf("%d%d", &A, &B);
     return (A * B);
 }
 
@@ -187,20 +186,18 @@ void UseChoice()
 
     if (choice == 'E')
     {
-        if (evenOdd())
-        {
-            printf("Number is Even \n");
-        }
-        else
-        {
-            printf("Number is odd.");
-        }
+        int num;
+        printf("Enter A number to check Even or Odd \n");
+        scanf("%d", &num);
+        evenOdd(num);
     }
     else if (choice == 'S')
     {
         printf("Salary calculation \n");
-
-        printf("Total Salary is : %f \n", salary());
+        float baseSalary;
+        printf("Enter Base salary: \n");
+        scanf("%f", &baseSalary);
+        salary(baseSalary);
     }
     else if (choice == 'G')
     {
@@ -210,16 +207,13 @@ void UseChoice()
         int A, B, C;
         scanf("%d%d%d", &A, &B, &C);
 
-        printf("%d is the greatest.\n", A > B && A > C ? A : (B > C ? B : C));
+        printf("%d is greatest. \n", greatestOfThree(A, B, C));
     }
 }
-void discountStudent()
+
+float discountStudent(float price, char std)
 {
-    float price, finalprice;
-    printf("Enter Price of the product : \n");
-    scanf("%f", &price);
-    printf("Are you a Student ? (Y/N) \n");
-    char std = getch();
+    float finalprice;
     if (std == 'Y')
     {
         if (price >= 500)
@@ -240,28 +234,24 @@ void discountStudent()
     {
         finalprice = price;
     }
-    printf("Final price is : %.2f", finalprice);
+    return (finalprice);
 }
 
-int evenOdd()
+void evenOdd(int num)
 {
-    int num;
-    printf("Enter A number to check Even or Odd \n");
-    scanf("%d", &num);
+
     if (num % 2 == 0)
     {
-        return 1;
+        printf("Number is Even \n");
     }
     else
     {
-        return 0;
+        printf("Number is odd.");
     }
 }
-float salary()
+
+void salary(float baseSalary)
 {
-    float baseSalary, totalSalary;
-    printf("Enter Base salary: \n");
-    scanf("%f", &baseSalary);
     float DA, TA, HRA;
     if (baseSalary <= 5000)
     {
@@ -275,6 +265,6 @@ float salary()
         TA = 0.25 * baseSalary;
         HRA = 0.30 * baseSalary;
     }
-    totalSalary = DA + TA + HRA + baseSalary;
-    return totalSalary;
+
+    printf("\n %.4f is Totalsalary.", DA + TA + HRA + baseSalary);
 }

@@ -1,31 +1,36 @@
 #include <stdio.h>
 void armstrongInRange();
-
+void primeInRange();
+void perfectInRange();
+void strongInRange();
 void main()
 {
-    printf("What do you want to do : \n 1> Armstrong Numbers in range. \n 2> Prime numbers in range \n");
-    printf("3> Perfect Numbers in range. \n 4> Strong numbers in range \n Enter Your choice (1,2,3,4) :");
-    int ch;
-    scanf("%d", &ch);
-    if (ch == 1)
+    int ch = 1;
+    while (ch)
     {
-        armstrongInRange();
-    }
-    else if (ch == 2)
-    {
-        primeInRange();
-    }
-    else if (ch == 3)
-    {
-        perfectInRange();
-    }
-    else if (ch == 4)
-    {
-        strongInRange();
-    }
-    else
-    {
-        printf("Invalid choice");
+        printf("\n What do you want to do : \n1> Armstrong Numbers in range.\n2> Prime numbers in range \n");
+        printf("3> Perfect Numbers in range. \n4> Strong numbers in range \nEnter Your choice (1,2,3,4) :");
+        scanf("%d", &ch);
+        if (ch == 1)
+        {
+            armstrongInRange();
+        }
+        else if (ch == 2)
+        {
+            primeInRange();
+        }
+        else if (ch == 3)
+        {
+            perfectInRange();
+        }
+        else if (ch == 4)
+        {
+            strongInRange();
+        }
+        else
+        {
+            printf("Invalid choice");
+        }
     }
 }
 void armstrongInRange()

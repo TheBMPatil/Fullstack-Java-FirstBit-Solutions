@@ -1,40 +1,58 @@
 #include <stdio.h>
-void armstrongInRange();
-
+void armstrongInRange(int, int);
+void primeInRange(int, int);
+void perfectInRange(int, int);
+void strongInRange(int, int);
 void main()
 {
-    printf("What do you want to do : \n 1> Armstrong Numbers in range. \n 2> Prime numbers in range \n");
-    printf("3> Perfect Numbers in range. \n 4> Strong numbers in range \n Enter Your choice (1,2,3,4) :");
-    int ch;
-    scanf("%d", &ch);
-    if (ch == 1)
+    int ch = 1;
+    while (ch)
     {
-        armstrongInRange();
-    }
-    else if (ch == 2)
-    {
-        primeInRange();
-    }
-    else if (ch == 3)
-    {
-        perfectInRange();
-    }
-    else if (ch == 4)
-    {
-        strongInRange();
-    }
-    else
-    {
-        printf("Invalid choice");
+        int start, end;
+        printf("\n What do you want to do : \n1> Armstrong Numbers in range.\n2> Prime numbers in range \n");
+        printf("3> Perfect Numbers in range. \n4> Strong numbers in range \nEnter Your choice (1,2,3,4) :");
+        scanf("%d", &ch);
+        if (ch == 1)
+        {
+
+            printf("\n Enter The range start 3 digit  :");
+            scanf("%d", &start);
+            printf("\n Enter The range end 3 digit:");
+            scanf("%d", &end);
+            armstrongInRange(start, end);
+        }
+        else if (ch == 2)
+        {
+            printf("\n Enter The range start :");
+            scanf("%d", &start);
+            printf("\n Enter The range end :");
+            scanf("%d", &end);
+            primeInRange(start, end);
+        }
+        else if (ch == 3)
+        {
+            printf("\n Enter The range start :");
+            scanf("%d", &start);
+            printf("\n Enter The range end :");
+            scanf("%d", &end);
+            perfectInRange(start, end);
+        }
+        else if (ch == 4)
+        {
+            printf("\n Enter The range start :");
+            scanf("%d", &start);
+            printf("\n Enter The range end :");
+            scanf("%d", &end);
+            strongInRange(start, end);
+        }
+        else
+        {
+            printf("Invalid choice");
+        }
     }
 }
-void armstrongInRange()
+void armstrongInRange(int start, int end)
 {
-    int start, end;
-    printf("\n Enter The range start :");
-    scanf("%d", &start);
-    printf("\n Enter The range end :");
-    scanf("%d", &end);
 
     for (int i = start; i <= end; i++)
     {
@@ -59,13 +77,8 @@ void armstrongInRange()
         }
     }
 }
-void primeInRange()
+void primeInRange(int start, int end)
 {
-    int start, end;
-    printf("Enter The range start :");
-    scanf("%d", &start);
-    printf("Enter The range end :");
-    scanf("%d", &end);
 
     for (int i = start; i <= end; i++)
     {
@@ -87,13 +100,8 @@ void primeInRange()
         }
     }
 }
-void perfectInRange()
+void perfectInRange(int start, int end)
 {
-    int start, end;
-    printf("Enter The range start :");
-    scanf("%d", &start);
-    printf("Enter The range end :");
-    scanf("%d", &end);
 
     for (int i = start; i <= end; i++)
     {
@@ -112,13 +120,8 @@ void perfectInRange()
         }
     }
 }
-void strongInRange()
+void strongInRange(int start, int end)
 {
-    int start, end;
-    printf("Enter The range start :");
-    scanf("%d", &start);
-    printf("Enter The range end :");
-    scanf("%d", &end);
 
     for (int i = start; i <= end; i++)
     {

@@ -1,14 +1,16 @@
 #include <stdio.h>
 void OneToTen(int);
 void tableOfNum(int);
-void sumOfNumdinrange(int, int);
-void isPrime(int);
-void armstrong(int);
-void perfect(int);
-void factorial(int);
-void strong(int);
-void palindrome(int);
-void sumOfFirstAndLastDigit(int);
+int sumOfNumdinrange(int, int);
+int isPrime(int);
+int armstrong(int);
+int perfect(int);
+int factorial(int);
+int strong(int);
+int palindrome(int);
+int sumOfFirstAndLastDigit(int);
+int power(int, int);
+int getCount(int);
 void main()
 {
     int ch = 1;
@@ -51,55 +53,55 @@ void main()
             // printf("\n");
             printf("Enter Ending range : ");
             scanf("%d", &end);
-            sumOfNumdinrange(start, end);
+            printf("\n %d is sum", sumOfNumdinrange(start, end));
         }
         else if (ch == 4)
         {
             printf("Enter a number to cheack Prime or Not :");
             scanf("%d", &num);
-            isPrime(num);
+            isPrime(num) ? printf("num %d is not Prime. \n", num) : printf("num %d is  Prime. \n", num);
         }
         else if (ch == 5)
         {
             printf("Enter A number to cheack armstrong. : ");
             scanf("%d", &num);
-            armstrong(num);
+            armstrong(num) ? printf("Number %d is Armstrong Number.", num) : printf("Number %d is NOT Armstrong Number.", num);
         }
         else if (ch == 6)
         {
             printf("Enter A number :");
             scanf("%d", &num);
-            perfect(num);
+            perfect(num) ? printf("Number %d is perfect number", num) : printf("%d is not perfect number", num);
         }
         else if (ch == 7)
         {
             printf("Enter A number :");
             scanf("%d", &num);
-            factorial(num);
+            printf("%d is factorial of entered number", factorial(num));
         }
         else if (ch == 8)
         {
             printf("Enter a number : ");
             scanf("%d", &num);
-            strong(num);
+            strong(num) ? printf("%d is a strong number", num) : printf("%d is Not  strong number", num);
         }
         else if (ch == 9)
         {
             printf("Enter a number : ");
             scanf("%d", &num);
-            palindrome(num);
+            palindrome(num) ? printf("%d is a palindrome Number.", num) : printf("%d Is not a palindrome number", num);
         }
         else if (ch == 10)
         {
             printf("Enter A number : ");
             scanf("%d", &num);
-            sumOfFirstAndLastDigit(num);
+
+            printf("%d is sum of first and last digit of given numbr %d.", sumOfFirstAndLastDigit(num), num);
         }
     }
 }
 void OneToTen(num)
 {
-
     while (num <= 10)
     {
         printf("%d \n", num);
@@ -118,7 +120,7 @@ void tableOfNum(int num)
     }
     printf("Exit value of i = %d", i);
 }
-void sumOfNumdinrange(int start, int end)
+int sumOfNumdinrange(int start, int end)
 {
 
     int sum = 0;
@@ -129,45 +131,67 @@ void sumOfNumdinrange(int start, int end)
         sum += temp;
         temp++;
     }
-    printf("Sum of numbers between %d to %d is = %d", start, end, sum);
+    return sum;
 }
-void isPrime(int num)
+int isPrime(int num)
 {
     int i = 2, cnt = 0;
     while (i <= num / 2)
     {
         if (num % i == 0)
         {
-            cnt = 1;
-            break;
+            return 0;
         }
         i++;
     }
-    (cnt > 0 || num == 1) ? printf("num %d is not Prime. \n", num) : printf("num %d is  Prime. \n", num);
-
-    printf("Exit value of I is : %d", i);
+    return 1;
 }
-void armstrong(int num)
+int armstrong(int num)
 {
     int rem = 0;
     int armN = 0;
     int temp = num;
+    int cnt = getCount(temp);
+    printf("\n couynt = %d", cnt);
+
     while (temp)
     {
         rem = temp % 10;
-        armN += rem * rem * rem;
+        armN += power(rem, cnt);
         temp /= 10;
     }
     if (armN == num)
     {
-        printf("Number %d is Armstrong Number.", num);
+        return 1;
     }
     else
     {
-        printf("Number %d is not Armstrong Number.", num);
+        return 0;
     }
 }
-void perfect(int num)
+int power(int b, int e)
+{
+    printf("\n Inside Power");
+    while (e)
+    {
+        printf("\n %d= b inside powr while", b);
+        b *= b;
+        e--;
+    }
+    return b;
+}
+int getCount(int num)
+{
+    printf("\n Inmside Getcount");
+    int count = 0;
+    while (num)
+    {
+        count++;
+        num /= 10;
+    }
+    return count;
+}
+int perfect(int num)
 {
     int i = 1, cnt = 0, sumOfDivisor = 0;
     while (i < num)
@@ -179,10 +203,10 @@ void perfect(int num)
         }
         i++;
     }
-    (sumOfDivisor == num) ? printf("Number %d is perfect number", num) : printf("%d is not perfect number", num);
+    return (sumOfDivisor == num);
 }
 
-void factorial(int num)
+int factorial(int num)
 {
     int Fact = 1;
     if (num < 0)
@@ -200,9 +224,9 @@ void factorial(int num)
         for (int i = 2; i <= num; i++)
             Fact *= i;
     }
-    printf("%d is factorial of entered number", Fact);
+    return Fact;
 }
-void strong(int num)
+int strong(int num)
 {
 
     int temp = num;
@@ -231,27 +255,28 @@ void strong(int num)
     // printf("%d is factsum.", FcatSum);
     if (FcatSum == num)
     {
-        printf("%d is a strong number", num);
+        return 1;
     }
     else
     {
-        printf("%d is not a strong number.", num);
+        return 0;
+        // printf("%d is not a strong number.", num);
     }
 }
-void palindrome(int num)
+int palindrome(int num)
 {
+    scanf("%d", &num);
     int temp = num;
     int rev = 0;
-    while (temp)
+    while (temp > 0)
     {
-        // printf("\n %d temp ", temp);
         int rem = temp % 10;
         rev = (rev * 10) + rem;
         temp /= 10;
     }
-    (rev == num) ? printf("%d is a palindrome Number.", num) : printf("%d Is not a palindrome number", num);
+    return (rev == num);
 }
-void sumOfFirstAndLastDigit(int num)
+int sumOfFirstAndLastDigit(int num)
 {
     int lastDigit, firstDigit;
     lastDigit = num % 10;
@@ -261,6 +286,5 @@ void sumOfFirstAndLastDigit(int num)
     {
         firstDigit /= 10;
     }
-    int sum = firstDigit + lastDigit;
-    printf("%d is sum of first and last digit of given numbr %d.", sum, num);
+    return (firstDigit + lastDigit);
 }

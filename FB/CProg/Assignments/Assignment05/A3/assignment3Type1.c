@@ -11,62 +11,66 @@ void palindrome();
 void sumOfFirstAndLastDigit();
 void main()
 {
-    int ch;
-    printf("Eneter your choice : \n");
-    printf("1) one to ten: \n");
-    printf("2) Table of Num: \n");
-    printf("3) Sum of nums in range : \n");
-    printf("4) is prime: \n");
-    printf("5) Armstrong: \n");
-    printf("6) Perfect No: \n");
-    printf("7) Factorial: \n");
-    printf("8) Strong Num: \n");
-    printf("9) Palindrome: \n");
-    printf("10) Sum Of Frirst and Last Digit: \n");
-    scanf("%d", &ch);
-    if (ch > 10 || ch <= 0)
+    int ch = 1;
+    while (ch)
     {
-        printf("Inavalid Choice !");
-    }
-    else if (ch == 1)
-    {
-        OneToTen();
-    }
-    else if (ch == 2)
-    {
-        tableOfNum();
-    }
-    else if (ch == 3)
-    {
-        sumOfNumdinrange();
-    }
-    else if (ch == 4)
-    {
-        isPrime();
-    }
-    else if (ch == 5)
-    {
-        armstrong();
-    }
-    else if (ch == 6)
-    {
-        perfect();
-    }
-    else if (ch == 7)
-    {
-        factorial();
-    }
-    else if (ch == 8)
-    {
-        strong();
-    }
-    else if (ch == 9)
-    {
-        palindrome();
-    }
-    else if (ch == 10)
-    {
-        sumOfFirstAndLastDigit();
+        printf("Eneter your choice : \n");
+        printf("1) one to ten: \n");
+        printf("2) Table of Num: \n");
+        printf("3) Sum of nums in range : \n");
+        printf("4) is prime: \n");
+        printf("5) Armstrong: \n");
+        printf("6) Perfect No: \n");
+        printf("7) Factorial: \n");
+        printf("8) Strong Num: \n");
+        printf("9) Palindrome: \n");
+        printf("10) Sum Of Frirst and Last Digit: \n");
+        printf(" Enter 0 to exit.\n");
+        scanf("%d", &ch);
+        if (ch > 10 || ch <= 0)
+        {
+            printf("Inavalid Choice !");
+        }
+        else if (ch == 1)
+        {
+            OneToTen();
+        }
+        else if (ch == 2)
+        {
+            tableOfNum();
+        }
+        else if (ch == 3)
+        {
+            sumOfNumdinrange();
+        }
+        else if (ch == 4)
+        {
+            isPrime();
+        }
+        else if (ch == 5)
+        {
+            armstrong();
+        }
+        else if (ch == 6)
+        {
+            perfect();
+        }
+        else if (ch == 7)
+        {
+            factorial();
+        }
+        else if (ch == 8)
+        {
+            strong();
+        }
+        else if (ch == 9)
+        {
+            palindrome();
+        }
+        else if (ch == 10)
+        {
+            sumOfFirstAndLastDigit();
+        }
     }
 }
 void OneToTen()
@@ -139,11 +143,12 @@ void armstrong()
 {
     int num, rem = 0;
     int armN = 0;
-    printf("Enter A number to cheack armstrong. : ");
+    printf("Enter A number to cheack armstrong. \n: ");
     scanf("%d", &num);
     int temp = num;
-    while (temp >= 0)
+    while (temp)
     {
+        // printf("Im stuck help me !!!!");
         rem = temp % 10;
         armN += rem * rem * rem;
         temp /= 10;
@@ -154,13 +159,13 @@ void armstrong()
     }
     else
     {
-        printf("Number %d is Armstrong Number.", num);
+        printf("Number %d is not Armstrong Number.", num);
     }
 }
 void perfect()
 {
     printf("Enter A number :");
-    int num, i = 1, cnt = 0, sumOfDivisor = 0;
+    int num, i = 1, sumOfDivisor = 0;
     scanf("%d", &num);
 
     while (i < num)
@@ -168,17 +173,17 @@ void perfect()
         if (num % i == 0)
         {
             sumOfDivisor += i;
-            cnt++;
+            // cnt++;
         }
         i++;
     }
     if (sumOfDivisor == num)
     {
-        printf("Number %d is perfect number", num);
+        printf("Number %d is perfect number \n", num);
     }
     else
     {
-        printf("%d is not perfect number", num);
+        printf("%d is not perfect number \n", num);
     }
 }
 void factorial()
@@ -201,7 +206,9 @@ void factorial()
         // }
 
         for (int i = 2; i <= num; i++)
+        {
             Fact *= i;
+        }
     }
     printf("%d is factorial of entered number", Fact);
 }
