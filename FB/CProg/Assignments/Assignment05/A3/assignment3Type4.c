@@ -59,7 +59,7 @@ void main()
         {
             printf("Enter a number to cheack Prime or Not :");
             scanf("%d", &num);
-            isPrime(num) ? printf("num %d is not Prime. \n", num) : printf("num %d is  Prime. \n", num);
+            isPrime(num) ? printf("num %d is  Prime. \n", num) : printf("num %d is not Prime. \n", num);
         }
         else if (ch == 5)
         {
@@ -95,7 +95,6 @@ void main()
         {
             printf("Enter A number : ");
             scanf("%d", &num);
-
             printf("%d is sum of first and last digit of given numbr %d.", sumOfFirstAndLastDigit(num), num);
         }
     }
@@ -152,7 +151,7 @@ int armstrong(int num)
     int armN = 0;
     int temp = num;
     int cnt = getCount(temp);
-    printf("\n couynt = %d", cnt);
+    // printf("\n couynt = %d", cnt);
 
     while (temp)
     {
@@ -171,10 +170,10 @@ int armstrong(int num)
 }
 int power(int b, int e)
 {
-    printf("\n Inside Power");
+    // printf("\n Inside Power");
     while (e)
     {
-        printf("\n %d= b inside powr while", b);
+        // printf("\n %d= b inside powr while", b);
         b *= b;
         e--;
     }
@@ -182,7 +181,7 @@ int power(int b, int e)
 }
 int getCount(int num)
 {
-    printf("\n Inmside Getcount");
+    // printf("\n Inmside Getcount");
     int count = 0;
     while (num)
     {
@@ -265,7 +264,6 @@ int strong(int num)
 }
 int palindrome(int num)
 {
-    scanf("%d", &num);
     int temp = num;
     int rev = 0;
     while (temp > 0)
