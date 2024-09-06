@@ -1,5 +1,8 @@
 #include <stdio.h>
 void arrayInput(int[], int);
+void ascSortArray(int[], int);
+void desSortingArray(int[], int);
+// void sortingArray(int[], int);
 void main()
 {
     int size, key;
@@ -7,7 +10,9 @@ void main()
     scanf("%d", &size);
     int arr[size];
     arrayInput(arr, size);
-    sortingArray(arr, size);
+    // sortingArray(arr, size);
+    ascSortArray(arr, size);
+    desSortingArray(arr, size);
 }
 void arrayInput(int arr[], int size)
 {
@@ -25,7 +30,7 @@ void printArray(int arr[], int size)
     }
 }
 
-void sortingArray(int arr[], int size)
+void ascSortArray(int arr[], int size)
 {
     printf("\n Original array : ");
     printArray(arr, size);
@@ -42,6 +47,48 @@ void sortingArray(int arr[], int size)
             }
         }
     }
-    printf("\n Sorted array : ");
+    printf("\n AscSorted array : ");
     printArray(arr, size);
 }
+
+void desSortingArray(int arr[], int size)
+{
+    printf("\n Original array : ");
+    printArray(arr, size);
+    int temp;
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size - 1 - i; j++)
+        {
+            if (arr[j] < arr[j + 1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    printf("\n DesSorted array : ");
+    printArray(arr, size);
+}
+
+// void sortingArray(int arr[], int size)
+// {
+//     printf("\n Original array : ");
+//     printArray(arr, size);
+//     int temp;
+//     for (int i = 0; i < size; i++)
+//     {
+//         for (int j = 0; j < size - 1 - i; j++)
+//         {
+//             if (arr[j] > arr[j + 1])
+//             {
+//                 temp = arr[j];
+//                 arr[j] = arr[j + 1];
+//                 arr[j + 1] = temp;
+//             }
+//         }
+//     }
+//     printf("\n Sorted array : ");
+//     printArray(arr, size);
+// }
