@@ -2,18 +2,18 @@
 #include <string.h>
 void main()
 {
-    char str[50]; // str2[50];
+    char str[50], str2[50];
     printf("Enter the string:");
     gets(str);
-    // printf("Enter the string2:");
-    // gets(str2);
+    printf("Enter the string2:");
+    gets(str2);
     printf("\n %u : is Address of STR1 ", str);
     // duplicate
 
-    char *ptr = strdup(str);
-    printf("\n%s is duplicate result.", ptr);
-    printf("\n %u : is Address of STR2 ", ptr);
-    // char str2[] = strdup(str);
+    // char *ptr = strdup(str);
+    // printf("\n%s is duplicate result.", ptr);
+    // printf("\n %u : is Address of STR2 ", ptr);
+    // // char str2[] = strdup(str);
     // printf("\n%s is duplicate result.", str2);
     // printf("\n %u : is Address of STR2 ", str2);
 
@@ -22,8 +22,8 @@ void main()
     //  printf("\n %u : is returned Address ", strstr(str, str2));
 
     // StrCat concatenate
-    // printf("\n %s : is concat res ", strcat(str, str2));
-    // printf("\n %u : is concat Address ", strcat(str, str2));
+    printf("\n %s : is concat res ", strcat(str, str2));
+    printf("\n %u : is concat Address ", strcat(str, str2));
 
     // Strncmp not correct
     // int x = strncmp(str, str2,3);
