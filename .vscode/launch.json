@@ -7,9 +7,9 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": false,
-      "cwd": "/media/bm/1A3836243835FEF7/Code/POD",
-      "program": "/media/bm/1A3836243835FEF7/Code/POD/build/Debug/outDebug",
+      "externalConsole": true,
+      "cwd": "d:/FBC/FB/ExtraOnes",
+      "program": "d:/FBC/FB/ExtraOnes/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

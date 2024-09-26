@@ -151,7 +151,7 @@ void removePlayer(Player *p, int jerseyNumber)
     int plr = searchPlayerByJerseyNumber(p, jerseyNumber);
     if (plr == -1)
     {
-        printf("\nNo Player Found of id: %d", jerseyNumber);
+        printf("\nNo Player Found of Jersey Number: %d", jerseyNumber);
     }
     else
     {
@@ -258,6 +258,7 @@ Player *sortPlayerjerseyNumber(Player *p, char AD)
         return NULL;
     }
 }
+
 Player *sortPlayerMatchesPlayd(Player *p, char AD)
 {
     Player *p1 = (Player *)malloc(sizeof(Player) * PlayerIndex);
@@ -312,7 +313,7 @@ void main()
     // printf("\nSizeof Player :%d", sizeof(listOfPlayers) / sizeof(listOfPlayers[0]));
     // printf("\nSizeof Player :%d", sizeof(*listOfPlayers) * size);
     int choice = 0;
-    hardCodedPlayers(listOfPlayers);
+    // hardCodedPlayers(listOfPlayers);
 
     do
     {
@@ -474,29 +475,30 @@ void main()
 void showMenu()
 {
     printf("\n\n:Player System:\n");
-    printf("\n1)Add Player \t2)Add Multiple Players \t3)Display All Players \n4)Search Player By ID \t5) Update Player \t6) Remove Player \n7) List All wicketss \t8) List The Players By wickets \t9) List All Categories \n10) List Players By Categories \t11) Sort Players \t12) List Top 3 Players");
+    printf("\n1)Add Player \t2)Add Multiple Players \t3)Display All Players \n4)Search Player By ID \t5) Update Player \t6) Remove Player \n7) List All wicketss \t8) List The Players By wickets \t9) List All Categories \n10) List Players By Categories \t11) Sort Players \t12) List Top 3 Players \n");
 }
-void hardCodedPlayers(Player *p)
-{
-    p[0] = (Player){1, "Sachin Tendulkar", 10, 18426, 154, 463};
-    p[1] = (Player){2, "Virat Kohli", 18, 12898, 4, 274};
-    p[2] = (Player){3, "MS Dhoni", 7, 10773, 1, 350};
-    p[3] = (Player){4, "Rohit Sharma", 45, 10166, 8, 243};
-    p[4] = (Player){5, "Yuvraj Singh", 12, 8701, 111, 304};
-    p[5] = (Player){6, "Kapil Dev", 83, 3783, 253, 225};
-    p[6] = (Player){7, "Jasprit Bumrah", 93, 19, 121, 72};
-    p[7] = (Player){8, "Shikhar Dhawan", 25, 6793, 0, 167};
-    p[8] = (Player){9, "Anil Kumble", 3, 937, 337, 269};
-    p[9] = (Player){10, "Zaheer Khan", 34, 792, 282, 200};
-    p[10] = (Player){11, "Sourav Ganguly", 99, 11363, 100, 311};
-    p[11] = (Player){12, "Rahul Dravid", 19, 10889, 4, 344};
-    p[12] = (Player){13, "Harbhajan Singh", 3, 1237, 269, 236};
-    p[13] = (Player){14, "Mohammed Shami", 11, 141, 162, 95};
-    p[14] = (Player){15, "Gautam Gambhir", 5, 5238, 0, 147};
-    p[15] = (Player){16, "Ashish Nehra", 64, 141, 157, 120};
-    p[16] = (Player){17, "Ravindra Jadeja", 12, 2411, 191, 174};
-    p[17] = (Player){18, "Irfan Pathan", 56, 1544, 173, 120};
-    p[18] = (Player){19, "VVS Laxman", 6, 2338, 0, 86};
-    p[19] = (Player){20, "KL Rahul", 1, 1986, 0, 54};
-    PlayerIndex = 20; // Update the PlayerIndex
-}
+
+// void hardCodedPlayers(Player *p)
+// {
+//     p[0] = (Player){1, "Sachin Tendulkar", 10, 18426, 154, 463};
+//     p[1] = (Player){2, "Virat Kohli", 18, 12898, 4, 274};
+//     p[2] = (Player){3, "MS Dhoni", 7, 10773, 1, 350};
+//     p[3] = (Player){4, "Rohit Sharma", 45, 10166, 8, 243};
+//     p[4] = (Player){5, "Yuvraj Singh", 12, 8701, 111, 304};
+//     p[5] = (Player){6, "Kapil Dev", 83, 3783, 253, 225};
+//     p[6] = (Player){7, "Jasprit Bumrah", 93, 19, 121, 72};
+//     p[7] = (Player){8, "Shikhar Dhawan", 25, 6793, 0, 167};
+//     p[8] = (Player){9, "Anil Kumble", 3, 937, 337, 269};
+//     p[9] = (Player){10, "Zaheer Khan", 34, 792, 282, 200};
+//     p[10] = (Player){11, "Sourav Ganguly", 99, 11363, 100, 311};
+//     p[11] = (Player){12, "Rahul Dravid", 19, 10889, 4, 344};
+//     p[12] = (Player){13, "Harbhajan Singh", 3, 1237, 269, 236};
+//     p[13] = (Player){14, "Mohammed Shami", 11, 141, 162, 95};
+//     p[14] = (Player){15, "Gautam Gambhir", 5, 5238, 0, 147};
+//     p[15] = (Player){16, "Ashish Nehra", 64, 141, 157, 120};
+//     p[16] = (Player){17, "Ravindra Jadeja", 12, 2411, 191, 174};
+//     p[17] = (Player){18, "Irfan Pathan", 56, 1544, 173, 120};
+//     p[18] = (Player){19, "VVS Laxman", 6, 2338, 0, 86};
+//     p[19] = (Player){20, "KL Rahul", 1, 1986, 0, 54};
+//     PlayerIndex = 20; // Update the PlayerIndex
+// }
