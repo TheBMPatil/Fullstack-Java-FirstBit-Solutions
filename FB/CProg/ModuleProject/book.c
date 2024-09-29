@@ -19,11 +19,30 @@ typedef struct Book
 } Book;
 
 void hardCodedBooks(Book *);
+void addBookHelper(Book *b, int bookQuantity)
+{
+    for (int i = 0; i < bookQuantity; i++, bookIndex++)
+    {
+        printf("\nEnter Book %d Data", bookIndex + 1);
+        printf("\nEnter Book Id :");
+        scanf("%d", &b[bookIndex].bId);
+        printf("\nEnter Book Name :");
+        fflush(stdin);
+        gets(b[bookIndex].bookTitle);
+        printf("\nEnter Book Price :");
+        scanf("%f", &b[bookIndex].price);
+        printf("\nEnter Book Rating (1-5):");
+        scanf("%f", &b[bookIndex].rating);
+        printf("\nEnter Book Author Name :");
+        fflush(stdin);
+        gets(b[bookIndex].author);
+    }
+}
 
 Book *addBook(Book *b, int bookQuantity)
 {
     printf("\nAdding Books");
-    if (size - bookIndex <= bookQuantity)
+    if (size - bookIndex < bookQuantity)
     {
         size = (2 * size) + bookQuantity;
         Book *temp = (Book *)realloc(b, sizeof(Book) * size);
@@ -49,26 +68,6 @@ Book *addBook(Book *b, int bookQuantity)
     }
 }
 
-void addBookHelper(Book *b, int bookQuantity)
-{
-    for (int i = 0; i < bookQuantity; i++, bookIndex++)
-    {
-        printf("\nEnter Book %d Data", bookIndex + 1);
-        printf("\nEnter Book Id :");
-        scanf("%d", &b[bookIndex].bId);
-        printf("\nEnter Book Name :");
-        fflush(stdin);
-        gets(b[bookIndex].bookTitle);
-        printf("\nEnter Book Price :");
-        scanf("%f", &b[bookIndex].price);
-        printf("\nEnter Book Rating (1-5):");
-        scanf("%f", &b[bookIndex].rating);
-        printf("\nEnter Book Author Name :");
-        fflush(stdin);
-        gets(b[bookIndex].author);
-    }
-}
-
 void displayBooks(Book *b)
 {
     printf("\nAll Books are ");
@@ -88,7 +87,7 @@ void displayTop3(Book *b)
 {
     printf("\nTop 3 Books are ");
 
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 3 && i < bookIndex; i++)
     {
         printf("\nBook Id :%d", b[i].bId);
         printf("\nBook Name :%s", b[i].bookTitle);

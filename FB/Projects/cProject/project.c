@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int showMenu();
+void showMenu();
 
 int size = 10;
 int bookIndex = 0;
@@ -320,15 +320,15 @@ void main()
     // Book arr[10];
     // printf("\nSizeof Book :%d", sizeof(bookMall) / sizeof(bookMall[0]));
     // printf("\nSizeof Book :%d", sizeof(*bookMall) * size);
-    int choice = 0;
+    int choice = 1;
     hardCodedBooks(bookMall);
 
     do
     {
         int id;
         char auth[50], catg[50];
-        choice = showMenu();
-
+        showMenu();
+        scanf("%d", &choice);
         int sCh;
         char AD;
         Book *bs;
@@ -498,13 +498,10 @@ void main()
     free(bookMall);
 }
 
-int showMenu()
+void showMenu()
 {
-    char ch;
     printf("\n\n:Book System:\n");
     printf("\n1)Add Book \t2)Add Multiple Books \t3)Display All Books \n4)Search Book By ID \t5) Update Book \t6) Remove Book \n7) List All Authors \t8) List The Books By Author \t9) List All Categories \n10) List Books By Categories \t11) Sort Books \t12) List Top 3 Books");
-    scanf("%d", &ch);
-    return ch;
 }
 void hardCodedBooks(Book *b)
 {
