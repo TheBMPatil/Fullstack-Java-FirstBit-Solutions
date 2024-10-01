@@ -1,5 +1,4 @@
 // 4. Point of Sale System: Build a simple point of sale system using structures to represent products with attributes like name, price, and quantity. Allow users to add items to a cart and calculate the total cost.
-
 #include <stdio.h>
 #include <string.h>
 
@@ -10,6 +9,7 @@ typedef struct Product
     float price;
     int quantity;
 } Product;
+
 // All Products
 void hardCodedProducts(Product *product)
 {
@@ -29,6 +29,7 @@ void hardCodedProducts(Product *product)
     product[13] = (Product){14, "Power Supply", 3000.00, 40};
     product[14] = (Product){15, "SD Card", 1000.00, 100};
 }
+
 // Display One Product
 void showOneProduct(Product *product)
 {
@@ -50,6 +51,7 @@ void showRoom(Product *product)
     }
 }
 
+// Search Product
 int searchProduct(Product *product, char prodName[20])
 {
     for (int i = 0; i < 15; i++)
