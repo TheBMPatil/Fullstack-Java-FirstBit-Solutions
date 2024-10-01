@@ -11,9 +11,18 @@ typedef struct Date
     // Constructor
     Date()
     {
+        cout << "\nDefault constructor called\n";
         this->day = 1;
         this->month = 1;
         this->year = 2000;
+    }
+
+    Date(int day, int month, int year)
+    {
+        cout << "\nParameterized Constructor for Date called";
+        this->day = day;
+        this->month = month;
+        this->year = year;
     }
 
 public:
@@ -37,7 +46,7 @@ public:
 
 int main()
 {
-    Date date1, date2;
+    Date date1, date2(11, 10, 2002);
     int day, month, year;
 
     // Constructor call
@@ -67,25 +76,25 @@ int main()
     cout << "\nGetters Date1";
     cout << "\nDay : " << date1.getDay() << "\tMonth : " << date1.getMonth() << "\tYear : " << date1.getYear();
 
-    // Setters for Date2
-    cout << "\nEnter Day: ";
-    cin >> day;
-    date2.setDay(day);
+    // // Setters for Date2
+    // cout << "\nEnter Day: ";
+    // cin >> day;
+    // date2.setDay(day);
 
-    cout << "Enter Month: ";
-    cin >> month;
-    date2.setMonth(month);
+    // cout << "Enter Month: ";
+    // cin >> month;
+    // date2.setMonth(month);
 
-    cout << "Enter Year: ";
-    cin >> year;
-    date2.setYear(year);
+    // cout << "Enter Year: ";
+    // cin >> year;
+    // date2.setYear(year);
 
-    // Getters Date2
-    cout << "\nGetters Date2";
-    cout << "\nDay : " << date2.getDay() << "\tMonth : " << date2.getMonth() << "\tYear : " << date2.getYear();
+    // // Getters Date2
+    // cout << "\nGetters Date2";
+    // cout << "\nDay : " << date2.getDay() << "\tMonth : " << date2.getMonth() << "\tYear : " << date2.getYear();
 
-    // Display Date2 data
-    date2.display();
+    // // Display Date2 data
+    // date2.display();
 
     return 1;
 }

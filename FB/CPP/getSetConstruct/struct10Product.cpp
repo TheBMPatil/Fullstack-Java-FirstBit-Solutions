@@ -2,7 +2,7 @@
 #include <string.h>
 using namespace std;
 
-typedef struct Product
+struct Product
 {
     int id;
     char name[20];
@@ -12,10 +12,19 @@ typedef struct Product
     // Constructor
     Product()
     {
+        cout << "\nDefault Constructor Called";
         this->id = NULL;
         strcpy(this->name, "No Name");
         this->quantity = 0;
         this->price = 0;
+    }
+    Product(char *name, int id, int quantity, float price)
+    {
+        cout << "\nParameterized Constructor for Product called";
+        strcpy(this->name, name);
+        this->id = id;
+        this->quantity = quantity;
+        this->price = price;
     }
 
 public:
@@ -37,11 +46,10 @@ public:
         cout << "\nProduct ID: " << this->id << "\tName: " << this->name
              << "\tQuantity: " << this->quantity << "\tPrice: " << this->price;
     }
-
-} Product;
+};
 int main()
 {
-    Product prod1, prod2;
+    Product prod1, prod2("Laptop", 12, 34, 4000.0);
     int productId, quantity;
     char name[20];
     float price;
@@ -77,29 +85,29 @@ int main()
     cout << "\nGetters Product1";
     cout << "\nProductId : " << prod1.getId() << "\tName : " << prod1.getName() << "\tPrice : " << prod1.getPrice() << "\tQuantity : " << prod1.getQuantity();
 
-    // Setters for Product2
-    cout << "\nEnter Product ID: ";
-    cin >> productId;
-    prod2.setId(productId);
+    // // Setters for Product2
+    // cout << "\nEnter Product ID: ";
+    // cin >> productId;
+    // prod2.setId(productId);
 
-    cout << "Enter Product Name: ";
-    cin >> name;
-    prod2.setName(name);
+    // cout << "Enter Product Name: ";
+    // cin >> name;
+    // prod2.setName(name);
 
-    cout << "Enter Product Price: ";
-    cin >> price;
-    prod2.setPrice(price);
+    // cout << "Enter Product Price: ";
+    // cin >> price;
+    // prod2.setPrice(price);
 
-    cout << "Enter Product Quantity: ";
-    cin >> quantity;
-    prod2.setQuantity(quantity);
+    // cout << "Enter Product Quantity: ";
+    // cin >> quantity;
+    // prod2.setQuantity(quantity);
 
-    // Getters Product2
-    cout << "\nGetters Product2";
-    cout << "\nProductId : " << prod2.getId() << "\tName : " << prod2.getName() << "\tPrice : " << prod2.getPrice() << "\tQuantity : " << prod2.getQuantity();
+    // // Getters Product2
+    // cout << "\nGetters Product2";
+    // cout << "\nProductId : " << prod2.getId() << "\tName : " << prod2.getName() << "\tPrice : " << prod2.getPrice() << "\tQuantity : " << prod2.getQuantity();
 
     // Display Product2 data
-    prod2.display();
+    // prod2.display();
 
     return 1;
 }

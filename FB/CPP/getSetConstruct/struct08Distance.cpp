@@ -10,8 +10,16 @@ typedef struct Distance
     // Constructor
     Distance()
     {
+        cout << "\nDefault constructor called";
         this->feet = 0;
         this->inch = 0;
+    }
+
+    Distance(int feet, int inch)
+    {
+        cout << "\nParameterized Constructor for Distance called";
+        this->feet = feet;
+        this->inch = inch;
     }
 
 public:
@@ -32,7 +40,7 @@ public:
 } Distance;
 int main()
 {
-    Distance dist1, dist2;
+    Distance dist1, dist2(23, 43);
     int feet, inch;
 
     // Constructor call
@@ -58,21 +66,21 @@ int main()
     cout << "\nGetters Distance1";
     cout << "\nFeet : " << dist1.getFeet() << "\tInch : " << dist1.getInch();
 
-    // Setters for Distance2
-    cout << "\nEnter Feet: ";
-    cin >> feet;
-    dist2.setFeet(feet);
+    // // Setters for Distance2
+    // cout << "\nEnter Feet: ";
+    // cin >> feet;
+    // dist2.setFeet(feet);
 
-    cout << "Enter Inch: ";
-    cin >> inch;
-    dist2.setInch(inch);
+    // cout << "Enter Inch: ";
+    // cin >> inch;
+    // dist2.setInch(inch);
 
-    // Getters Distance2
-    cout << "\nGetters Distance2";
-    cout << "\nFeet : " << dist2.getFeet() << "\tInch : " << dist2.getInch();
+    // // Getters Distance2
+    // cout << "\nGetters Distance2";
+    // cout << "\nFeet : " << dist2.getFeet() << "\tInch : " << dist2.getInch();
 
-    // Display Distance2 data
-    dist2.display();
+    // // Display Distance2 data
+    // dist2.display();
 
     return 1;
 }

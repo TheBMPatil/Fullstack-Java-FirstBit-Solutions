@@ -8,13 +8,24 @@ typedef struct Admin
     char name[20];
     float salary;
     float allowence;
+
     // Construuctor
     Admin()
     {
+        cout << "\nDefault constructor called\n";
         this->id = 00;
         strcpy(this->name, "NoName");
         this->salary = 00;
         this->allowence = 00;
+    }
+
+    Admin(char *name, int id, float salary, float allowence)
+    {
+        cout << "\nParameterized Constructor for Admin called";
+        strcpy(this->name, name);
+        this->id = id;
+        this->salary = salary;
+        this->allowence = allowence;
     }
 
 public:
@@ -39,7 +50,7 @@ public:
 
 int main()
 {
-    Admin Admin1, Admin2;
+    Admin Admin1, Admin2("Bhagvat", 96, 75599999, 230000);
     int id;
     char name[20];
     float salary, allowence;
@@ -72,32 +83,32 @@ int main()
     // Display Admin data
     Admin1.display();
 
-    // Getters
-    cout << "\nGetters Admin1";
-    cout << "\nId : " << Admin1.getId() << "\tName : " << Admin1.getName() << "\tSalary : " << Admin1.getSalary() << "\tallowence : " << Admin1.getAllowence();
+    // // Getters
+    // cout << "\nGetters Admin1";
+    // cout << "\nId : " << Admin1.getId() << "\tName : " << Admin1.getName() << "\tSalary : " << Admin1.getSalary() << "\tallowence : " << Admin1.getAllowence();
 
-    // Setters for Admin
-    cout << "\nEnter Admin ID: ";
-    cin >> id;
-    Admin2.setId(id);
+    // // Setters for Admin
+    // cout << "\nEnter Admin ID: ";
+    // cin >> id;
+    // Admin2.setId(id);
 
-    cout << "Enter Admin Name: ";
-    cin >> name;
-    Admin2.setName(name);
+    // cout << "Enter Admin Name: ";
+    // cin >> name;
+    // Admin2.setName(name);
 
-    cout << "Enter Admin Salary: ";
-    cin >> salary;
-    Admin2.setSalary(salary);
+    // cout << "Enter Admin Salary: ";
+    // cin >> salary;
+    // Admin2.setSalary(salary);
 
-    cout << "Enter Admin allowence: ";
-    cin >> allowence;
-    Admin2.setAllowence(allowence);
-    // Getters Admin2
-    cout << "\nGetters Admin2";
-    cout << "\nId : " << Admin2.getId() << "\tName : " << Admin2.getName() << "\tSalary : " << Admin2.getSalary() << "\tallowence : " << Admin2.getAllowence();
-    // Display Admin data
-    cout << "\n\nAdmin2 Display";
-    Admin2.display();
+    // cout << "Enter Admin allowence: ";
+    // cin >> allowence;
+    // Admin2.setAllowence(allowence);
+    // // Getters Admin2
+    // cout << "\nGetters Admin2";
+    // cout << "\nId : " << Admin2.getId() << "\tName : " << Admin2.getName() << "\tSalary : " << Admin2.getSalary() << "\tallowence : " << Admin2.getAllowence();
+    // // Display Admin data
+    // cout << "\n\nAdmin2 Display";
+    // Admin2.display();
 
     return 1;
 }

@@ -13,11 +13,22 @@ typedef struct SalesManager
     // Constructor
     SalesManager()
     {
+        cout << "\nDefault constructor called\n";
         this->id = NULL;
         strcpy(this->name, "No Name");
         this->salary = NULL;
         this->incentive = NULL;
         this->target = NULL;
+    }
+
+    SalesManager(char *name, int id, float salary, float incentive, int target)
+    {
+        cout << "\nParameterized Constructor for SalesManager called";
+        strcpy(this->name, name);
+        this->id = id;
+        this->salary = salary;
+        this->incentive = incentive;
+        this->target = target;
     }
 
 public:
@@ -47,7 +58,7 @@ public:
 
 int main()
 {
-    SalesManager sm1, sm2;
+    SalesManager sm1, sm2("Bhagvat", 123, 23123, 432, 21);
     int id, target;
     char name[20];
     float salary, incentive;
@@ -84,36 +95,36 @@ int main()
     sm1.display();
 
     // Getters for SalesManager1
-    cout << "\nGetters SalesManager1";
-    cout << "\nId : " << sm1.getId() << "\tName : " << sm1.getName() << "\tSalary : " << sm1.getSalary() << "\tIncentive : " << sm1.getIncentive() << "\tTarget : " << sm1.getTarget();
+    // cout << "\nGetters SalesManager1";
+    // cout << "\nId : " << sm1.getId() << "\tName : " << sm1.getName() << "\tSalary : " << sm1.getSalary() << "\tIncentive : " << sm1.getIncentive() << "\tTarget : " << sm1.getTarget();
 
-    // Setters for SalesManager2
-    cout << "\nEnter SalesManager ID: ";
-    cin >> id;
-    sm2.setId(id);
+    // // Setters for SalesManager2
+    // cout << "\nEnter SalesManager ID: ";
+    // cin >> id;
+    // sm2.setId(id);
 
-    cout << "Enter SalesManager Name: ";
-    cin >> name;
-    sm2.setName(name);
+    // cout << "Enter SalesManager Name: ";
+    // cin >> name;
+    // sm2.setName(name);
 
-    cout << "Enter SalesManager Salary: ";
-    cin >> salary;
-    sm2.setSalary(salary);
+    // cout << "Enter SalesManager Salary: ";
+    // cin >> salary;
+    // sm2.setSalary(salary);
 
-    cout << "Enter SalesManager Incentive: ";
-    cin >> incentive;
-    sm2.setIncentive(incentive);
+    // cout << "Enter SalesManager Incentive: ";
+    // cin >> incentive;
+    // sm2.setIncentive(incentive);
 
-    cout << "Enter SalesManager Target: ";
-    cin >> target;
-    sm2.setTarget(target);
+    // cout << "Enter SalesManager Target: ";
+    // cin >> target;
+    // sm2.setTarget(target);
 
-    // Getters SalesManager2
-    cout << "\nGetters SalesManager2";
-    cout << "\nId : " << sm2.getId() << "\tName : " << sm2.getName() << "\tSalary : " << sm2.getSalary() << "\tIncentive : " << sm2.getIncentive() << "\tTarget : " << sm2.getTarget();
+    // // Getters SalesManager2
+    // cout << "\nGetters SalesManager2";
+    // cout << "\nId : " << sm2.getId() << "\tName : " << sm2.getName() << "\tSalary : " << sm2.getSalary() << "\tIncentive : " << sm2.getIncentive() << "\tTarget : " << sm2.getTarget();
 
-    // Display SalesManager2 data
-    sm2.display();
+    // // Display SalesManager2 data
+    // sm2.display();
 
     return 1;
 }

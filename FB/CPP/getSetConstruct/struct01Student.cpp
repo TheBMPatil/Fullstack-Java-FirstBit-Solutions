@@ -8,13 +8,20 @@ typedef struct Student
     float marks;
     Student()
     {
-        cout << "Constructor called";
+        cout << "\nDefault Constructor called";
         strcpy(this->name, "Not Given");
         this->rollNo = 0;
         this->marks = 0.00;
     }
 
 public:
+    Student(char *name, int rollNo, int marks)
+    {
+        cout << "\nParametreized Constructor called";
+        strcpy(this->name, name);
+        this->rollNo = rollNo;
+        this->marks = marks;
+    }
     void setRollNo(int rollNo)
     {
         this->rollNo = rollNo;
@@ -51,7 +58,7 @@ public:
 
 int main()
 {
-    Student s1, s2;
+    Student s1, s2("Bhagvat", 96, 98);
     int rn;
     float marks;
     char name[20];
@@ -78,26 +85,26 @@ int main()
     cout << "\n s1 Display";
     s1.display();
 
-    cout << "\n\nUsing Setters s2";
-    cout << "\nEnter Student Roll No :";
-    cin >> rn;
-    s2.setRollNo(rn);
+    // cout << "\n\nUsing Setters s2";
+    // cout << "\nEnter Student Roll No :";
+    // cin >> rn;
+    // s2.setRollNo(rn);
 
-    cout << "\nEnter Student Name :";
-    cin >> name;
-    s2.setName(name);
+    // cout << "\nEnter Student Name :";
+    // cin >> name;
+    // s2.setName(name);
 
-    cout << "\nEnter Student Marks :";
-    cin >> marks;
-    s2.setMarks(marks);
+    // cout << "\nEnter Student Marks :";
+    // cin >> marks;
+    // s2.setMarks(marks);
 
-    cout << "\n s2 Display";
+    // cout << "\n s2 Display";
 
-    s2.display();
+    // s2.display();
     cout << "\n\nGetters s1";
     cout << "\nRoll No:" << s1.getRollNo() << "\tName :" << s1.getName() << "\tMarks :" << s1.getMarks();
-    cout << "\n\nGetters s2";
-    cout << "\nRoll No:" << s2.getRollNo() << "\tName :" << s2.getName() << "\tMarks :" << s2.getMarks();
+    // cout << "\n\nGetters s2";
+    // cout << "\nRoll No:" << s2.getRollNo() << "\tName :" << s2.getName() << "\tMarks :" << s2.getMarks();
 
     return 0;
 }
