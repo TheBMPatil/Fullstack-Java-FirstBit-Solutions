@@ -63,6 +63,56 @@ public:
 		return temp;
 	}
 
+	// substraction
+	Complex operator-(Complex c)
+	{
+		Complex temp;
+		temp.real = this->real - c.getReal();
+		temp.imaginary = this->imaginary - c.getImaginary();
+		return temp;
+	}
+
+	Complex operator-(int a)
+	{
+		Complex temp;
+		temp.real = this->real - a;
+		temp.imaginary = this->imaginary - a;
+		return temp;
+	}
+	// Multiplication
+	Complex mul(Complex c)
+	{
+		Complex temp;
+		temp.real = this->real * c.getReal();
+		temp.imaginary = this->imaginary * c.getImaginary();
+		return temp;
+	}
+
+	Complex mul(int a)
+	{
+		Complex temp;
+		temp.real = this->real * a;
+		temp.imaginary = this->imaginary * a;
+		return temp;
+	}
+	// Division
+	Complex operator/(Complex c)
+	{
+		Complex temp;
+		temp.real = this->real / c.getReal();
+		temp.imaginary = this->imaginary / c.getImaginary();
+		return temp;
+	}
+
+	Complex operator/(int a)
+	{
+		Complex temp;
+		temp.real = this->real / a;
+		temp.imaginary = this->imaginary / a;
+		return temp;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	int operator>(Complex c)
 	{
 
@@ -94,12 +144,39 @@ public:
 };
 
 // Global Add
-Complex xyz(int a, Complex c)
+Complex operator+(int a, Complex c)
 {
 	printf("\nGlobal Add Fun");
 	Complex temp;
 	temp.setReal(a + c.getReal());
 	temp.setImaginary(a + c.getImaginary());
+	return temp;
+}
+// Global Sub
+Complex operator-(int a, Complex c)
+{
+	printf("\nGlobal Substract Fun");
+	Complex temp;
+	temp.setReal(a - c.getReal());
+	temp.setImaginary(a - c.getImaginary());
+	return temp;
+}
+// Global Mul
+Complex mul(int a, Complex c)
+{
+	printf("\nGlobal Mul Fun");
+	Complex temp;
+	temp.setReal(a * c.getReal());
+	temp.setImaginary(a * c.getImaginary());
+	return temp;
+}
+// Global Divide
+Complex operator/(int a, Complex c)
+{
+	printf("\nGlobal Div Fun");
+	Complex temp;
+	temp.setReal(a / c.getReal());
+	temp.setImaginary(a / c.getImaginary());
 	return temp;
 }
 

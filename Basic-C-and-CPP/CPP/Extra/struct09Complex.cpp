@@ -2,106 +2,123 @@
 #include <string.h>
 using namespace std;
 
-struct Complex {
-	private:
-		int real;
-		int imaginary;
+struct Complex
+{
+private:
+	int real;
+	int imaginary;
 
-	public:
-		// Constructor
-		Complex() {
-			// cout << "\nDefault constructor called\n";
-			this->real = 0;
-			this->imaginary = 0;
-		}
+public:
+	// Constructor
+	Complex()
+	{
+		// cout << "\nDefault constructor called\n";
+		this->real = 0;
+		this->imaginary = 0;
+	}
 
-		Complex(int real, int imaginary) {
-			// cout << "\nParameterized Constructor for Complex called\n";
-			this->real = real;
-			this->imaginary = imaginary;
-		}
+	Complex(int real, int imaginary)
+	{
+		// cout << "\nParameterized Constructor for Complex called\n";
+		this->real = real;
+		this->imaginary = imaginary;
+	}
 
-		// Setters
-		void setReal(int r) {
-			this->real = r;
-		}
-		void setImaginary(int i) {
-			this->imaginary = i;
-		}
+	// Setters
+	void setReal(int r)
+	{
+		this->real = r;
+	}
+	void setImaginary(int i)
+	{
+		this->imaginary = i;
+	}
 
-		// Getters
-		int getReal() {
-			return this->real;
-		}
-		int getImaginary() {
-			return this->imaginary;
-		}
+	// Getters
+	int getReal()
+	{
+		return this->real;
+	}
+	int getImaginary()
+	{
+		return this->imaginary;
+	}
 
-		// Display
-		void display() {
-			cout << "\nComplex Number: " << this->real << " + " << this->imaginary << "i";
-		}
+	// Display
+	void display()
+	{
+		cout << "\nComplex Number: " << this->real << " + " << this->imaginary << "i";
+	}
 
-		// Addition
-		Complex add(Complex c) {
-			Complex temp;
-			temp.real = this->real + c.getReal();
-			temp.imaginary = this->imaginary + c.getImaginary();
-			return temp;
-		}
-		Complex add(int a) {
-			Complex temp;
-			temp.real = this->real + a;
-			temp.imaginary = this->imaginary + a;
-			return temp;
-		}
+	// Addition
+	Complex add(Complex c)
+	{
+		Complex temp;
+		temp.real = this->real + c.getReal();
+		temp.imaginary = this->imaginary + c.getImaginary();
+		return temp;
+	}
+	Complex add(int a)
+	{
+		Complex temp;
+		temp.real = this->real + a;
+		temp.imaginary = this->imaginary + a;
+		return temp;
+	}
 
-		// Substraction
-		Complex sub(Complex c) {
-			Complex temp;
-			temp.real = this->real - c.getReal();
-			temp.imaginary = this->imaginary - c.getImaginary();
-			return temp;
-		}
+	// Substraction
+	Complex sub(Complex c)
+	{
+		Complex temp;
+		temp.real = this->real - c.getReal();
+		temp.imaginary = this->imaginary - c.getImaginary();
+		return temp;
+	}
 
-		Complex sub(int a) {
-			Complex temp;
-			temp.real = this->real - a;
-			temp.imaginary = this->imaginary - a;
-			return temp;
-		}
-		// Multiplication
-		Complex mul(Complex c) {
-			Complex temp;
-			temp.real = this->real * c.getReal();
-			temp.imaginary = this->imaginary * c.getImaginary();
-			return temp;
-		}
+	Complex sub(int a)
+	{
+		Complex temp;
+		temp.real = this->real - a;
+		temp.imaginary = this->imaginary - a;
+		return temp;
+	}
+	// Multiplication
+	Complex mul(Complex c)
+	{
+		Complex temp;
+		temp.real = this->real * c.getReal();
+		temp.imaginary = this->imaginary * c.getImaginary();
+		return temp;
+	}
 
-		Complex mul(int a) {
-			Complex temp;
-			temp.real = this->real * a;
-			temp.imaginary = this->imaginary * a;
-			return temp;
-		}
-		// Division
-		Complex divide(Complex c) {
-			Complex temp;
-			temp.real = this->real / c.getReal();
-			temp.imaginary = this->imaginary / c.getImaginary();
-			return temp;
-		}
+	Complex mul(int a)
+	{
+		Complex temp;
+		temp.real = this->real * a;
+		temp.imaginary = this->imaginary * a;
+		return temp;
+	}
+	// Division
+	Complex divide(Complex c)
+	{
+		Complex temp;
+		temp.real = this->real / c.getReal();
+		temp.imaginary = this->imaginary / c.getImaginary();
+		return temp;
+	}
 
-		Complex divide(int a) {
-			Complex temp;
-			temp.real = this->real / a;
-			temp.imaginary = this->imaginary / a;
-			return temp;
-		}
+	Complex divide(int a)
+	{
+		Complex temp;
+		temp.real = this->real / a;
+		temp.imaginary = this->imaginary / a;
+		return temp;
+	}
 };
 
 // Global Add
-Complex add(int a, Complex c) {
+Complex add(int a, Complex c)
+{
 	printf("\nGlobal Add Fun");
 	Complex temp;
 	temp.setReal(a + c.getReal());
@@ -109,7 +126,8 @@ Complex add(int a, Complex c) {
 	return temp;
 }
 // Global Sub
-Complex sub(int a, Complex c) {
+Complex sub(int a, Complex c)
+{
 	printf("\nGlobal Substract Fun");
 	Complex temp;
 	temp.setReal(a - c.getReal());
@@ -117,7 +135,8 @@ Complex sub(int a, Complex c) {
 	return temp;
 }
 // Global Mul
-Complex mul(int a, Complex c) {
+Complex mul(int a, Complex c)
+{
 	printf("\nGlobal Mul Fun");
 	Complex temp;
 	temp.setReal(a * c.getReal());
@@ -125,7 +144,8 @@ Complex mul(int a, Complex c) {
 	return temp;
 }
 // Global Divide
-Complex divide(int a, Complex c) {
+Complex divide(int a, Complex c)
+{
 	printf("\nGlobal Div Fun");
 	Complex temp;
 	temp.setReal(a / c.getReal());
@@ -133,7 +153,8 @@ Complex divide(int a, Complex c) {
 	return temp;
 }
 
-int main() {
+int main()
+{
 	Complex complex1, complex2(30, 49);
 	int real, imaginary;
 

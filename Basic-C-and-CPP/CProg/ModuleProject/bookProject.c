@@ -40,8 +40,17 @@ void addBookHelper(Book *b, int bookQuantity)
         scanf("%f", &b[bookIndex].price);
 
         // Input for Book Rating
-        printf("| Enter Book Rating (1-5) : ");
-        scanf("%f", &b[bookIndex].rating);
+        do
+        {
+            printf("| Enter Book Rating (1-5) : ");
+            scanf("%f", &b[bookIndex].rating);
+            if (b[bookIndex].rating > 5)
+            {
+                printf("\n\nInvalid Input \n");
+            }
+
+            /* code */
+        } while (b[bookIndex].rating > 5);
 
         // Input for Book Author Name
         printf("| Enter Book Author Name  : ");
