@@ -129,14 +129,14 @@ float calculateTotalOfProduct(Bill *bill)
 void oneProdBill(Bill *bill)
 {
     // printf("\t %d \t %s \t %d \t %.2f \t %d", bill->id, bill->name, bill->quantity, bill->price, calculateTotalOfProduct(bill));
-
     printf("|  %-7d | %-15s | %-3d | %-7.2f | %-6.2f |", bill->id, bill->name, bill->quantity, bill->price, calculateTotalOfProduct(bill));
 }
+
 void printBill(Bill *bill, int totalProd)
 {
-    printf("\n------------------------------------------------------------");
-    printf("\n| Sr.No |    Id    |      Name       | Qty |  Price  | Total |");
-    printf("\n------------------------------------------------------------");
+    printf("\n-------------------------------------------------------------------");
+    printf("\n| Sr.No |    Id    |      Name       | Qty |   Price   |   Total  |");
+    printf("\n-------------------------------------------------------------------");
     for (int i = 0; i < totalProd; i++)
     {
         printf("\n|  %-5d", i + 1);

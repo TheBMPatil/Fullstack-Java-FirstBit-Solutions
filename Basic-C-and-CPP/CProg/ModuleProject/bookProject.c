@@ -118,13 +118,15 @@ void displayBooks(Book *b)
 
     for (int i = 0; i < bookIndex; i++)
     {
-        displayOneBook(&b[i]);
-        // printf("\nBook Id :%d", b[i].bId);
-        // printf("\nBook Name :%s", b[i].bookTitle);
-        // printf("\nBook Price :%.2f", b[i].price);
-        // printf("\nBook Rating :%.2f", b[i].rating);
-        // printf("\nBook Author :%s", b[i].author);
-        // printf("\nBook Category :%s", b[i].category);
+        // displayOneBook(&b[i]);
+        printf("\n\n|----------------------------------:: Book Data ::------------------------------------|\n");
+        printf("| Book ID       : %-67d |\n", b[i].bId);
+        printf("| Book Name     : %-67s |\n", b[i].bookTitle);
+        printf("| Book Price    : %-67.2f |\n", b[i].price);
+        printf("| Book Rating   : %-67.2f |\n", b[i].rating);
+        printf("| Book Author   : %-67s |\n", b[i].author);
+        printf("| Book Category : %-67s |\n", b[i].category);
+        printf("|-------------------------------------------------------------------------------------|\n");
     }
 }
 
@@ -135,7 +137,15 @@ void displayTop3(Book *b)
 
     for (int i = 0; i < 3 && i < bookIndex; i++)
     {
-        displayOneBook(&b[i]);
+        // displayOneBook(&b[i]);
+        printf("\n\n|----------------------------------:: Book Data ::------------------------------------|\n");
+        printf("| Book ID       : %-67d |\n", b[i].bId);
+        printf("| Book Name     : %-67s |\n", b[i].bookTitle);
+        printf("| Book Price    : %-67.2f |\n", b[i].price);
+        printf("| Book Rating   : %-67.2f |\n", b[i].rating);
+        printf("| Book Author   : %-67s |\n", b[i].author);
+        printf("| Book Category : %-67s |\n", b[i].category);
+        printf("|-------------------------------------------------------------------------------------|\n");
     }
 }
 
@@ -246,13 +256,18 @@ void listBooksByAuthor(Book *b, char author[])
 // List Books By Category
 void listBooksByCategory(Book *b, char category[])
 {
+    int i = 0;
     printf("\nList of Books By : %s", category);
-    for (int i = 0; i < bookIndex; i++)
+    for (; i < bookIndex; i++)
     {
         if (strcasecmp(b[i].category, category) == 0)
         {
             displayOneBook(&b[i]);
         }
+    }
+    if (i == bookIndex)
+    {
+        printf("\n No Book Found of this Category...!\n");
     }
 }
 
@@ -354,7 +369,7 @@ int showMenu()
     int ch;
     printf("\n\n|--------------------------------------- Book System ----------------------------------|\n");
     printf("| 1)  Add Book               | 2)  Add Multiple Books     | 3)  Display All Books      |\n");
-    printf("| 4)  Search Book By ID      | 5)  Update Book            | 6)  Remove Book            |\n");
+    printf("| 4)  Search Book 	     | 5)  Update Book            | 6)  Remove Book            |\n");
     printf("| 7)  List All Authors       | 8)  List Books By Author   | 9)  List All Categories    |\n");
     printf("| 10) List Books By Category | 11) Sort Books             | 12) List Top 3 Books       |\n");
     printf("|--------------------------------------------------------------------------------------|\n");

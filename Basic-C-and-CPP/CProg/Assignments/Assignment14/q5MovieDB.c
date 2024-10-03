@@ -5,6 +5,8 @@
 int showMenu();
 int size = 25;
 int movieIndex = 0;
+
+// Structure
 typedef struct Movie
 {
     char title[20];
@@ -29,17 +31,27 @@ void addMovie(Movie *movie)
     printf("\nEnter Genere of movie :");
     fflush(stdin);
     gets(movie->gener);
-    printf("\nEnter Rating of the Movie (1-5) :");
-    scanf("%f", &movie->rating);
+    do
+    {
+        printf("\nEnter Rating of the Movie (1-5) :");
+        scanf("%f", &movie->rating);
+        if (movie->rating > 5)
+        {
+            printf("\nInvalid Input...!");
+        }
+
+    } while (movie->rating > 5);
+
     printf("\nEnter Collection of the Movie :");
     scanf("%f", &movie->collection);
 }
+
 // Add Multiple Movies
 void addMovies(Movie *movies, int noOfMovies)
 {
-    for (int i = movieIndex; i < noOfMovies && i < size; i++, movieIndex++)
+    for (int i = 0; i < noOfMovies && i < size; i++, movieIndex++)
     {
-        addMovie(&movies[i]);
+        addMovie(&movies[movieIndex]);
     }
 }
 
@@ -91,13 +103,16 @@ void updateMovie(Movie *movies, char title[])
         scanf("%f", &movies[idx].rating);
         printf("\nOld Collection is  : %.2f \nEnter New Collection :", movies[idx].collection);
         scanf("%f", &movies[idx].collection);
+        printf("\nUpdated Movie Data \n");
+        displayOne(&movies[idx]);
     }
 }
 
+// Main Fun
 void main()
 {
     Movie movies[size];
-    int choice, noOfMovies;
+    int choice, noOfMovies, idx;
     char title[20];
     do
     {
@@ -117,10 +132,18 @@ void main()
             displayAll(movies);
             break;
         case 4:
-            printf("\nEnter The title of the movie you want to search");
+            printf("\nEnter The title of the movie you want to search :");
             fflush(stdin);
             gets(title);
-            searchMovieByTitle(movies, title);
+            idx = searchMovieByTitle(movies, title);
+            if (idx == -1)
+            {
+                printf("\nNo Movie Found of name %s", title);
+            }
+            else
+            {
+                displayOne(&movies[idx]);
+            }
             break;
         case 5:
             printf("\nEnter The title of the movie you want to Update");
@@ -139,12 +162,14 @@ void main()
 
     // printf("\nHello");
 }
+
+// Show Menu Fun
 int showMenu()
 {
     int ch;
     printf("\n \t\tMenu ");
     // Allow users to add, search for, and update movie records.
-    printf("\n1) Add one Movie data \t2) Add Multiple Movies \t3) Display all movies \n4) Search Movie By Name \t5) Update Movie");
+    printf("\n1) Add one Movie data \t2) Add Multiple Movies \t3) Display all movies \n4) Search Movie By Name \t5) Update Movie \n \t:");
     scanf("%d", &ch);
     return ch;
 }
