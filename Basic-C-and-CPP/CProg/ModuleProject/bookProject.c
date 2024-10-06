@@ -48,8 +48,6 @@ void addBookHelper(Book *b, int bookQuantity)
             {
                 printf("\n\nInvalid Input \n");
             }
-
-            /* code */
         } while (b[bookIndex].rating > 5);
 
         // Input for Book Author Name
@@ -61,8 +59,6 @@ void addBookHelper(Book *b, int bookQuantity)
         printf("| Enter Book Category     : ");
         fflush(stdin);
         gets(b[bookIndex].category);
-
-        // printf("|--------------------------------------------------------------------------------------|\n");
     }
 }
 
@@ -90,7 +86,6 @@ Book *addBook(Book *b, int bookQuantity)
             b = temp; // Assign new block if realloc is successful
             printf("| Reallocation Successful. New size: %d\n", size);
             addBookHelper(b, bookQuantity); // Add books using helper function
-            // printf("|-------------------------------------------------------------------------------------|\n");
             return b;
         }
     }
@@ -190,7 +185,7 @@ void updateBook(Book *b, int id)
     int bk = searchBookByID(b, id);
     if (bk == -1)
     {
-        printf("\nNo Book Found of id: %d", id);
+        printf("\nNo Book Found of id: %d \n", id);
     }
     else
     {
