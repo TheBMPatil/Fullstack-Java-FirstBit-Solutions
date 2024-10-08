@@ -245,7 +245,7 @@ int main()
        cout<<sm->getTarget()<<"\n";
   		}
    
-   HR* hr=(HR*) dynamic_cast<HR*>(emp[i]);      
+   HR* hr=(HR*) dynamic_cast<HR*>(emp[i]);
    if(hr!=NULL) 
    {
        cout<<hr->getCommission()<<"\n";
@@ -254,13 +254,13 @@ int main()
   
 //   if(strcmp(typeid(*emp[i]).name(),typeid(Admin).name())==0) {
 //  
-//            
+//  
 //        Admin* admin=(Admin*)emp[i];
 //       cout<<admin->getAllowence()<<"\n\n";
-//       	   	   	   	   	   	   	   		        
-//        				                
+//       
+//        
 //    }
 cout<<"\n\n";
-}    
+}
     return 1;
 }

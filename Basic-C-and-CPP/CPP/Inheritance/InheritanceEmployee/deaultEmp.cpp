@@ -226,41 +226,31 @@ public:
 
 int main()
 {
-    Employee *emp[5];
-    emp[0] = new SalesManager("Bhagvat", 123, 500000, 1200, 22);
-    emp[1] = new AreaSalesManager("Bhagvat", 123, 690000, 1200, 2, "Pune");
-    emp[2] = new HR("Pinto", 124, 560000, 345);
-    emp[3] = new Admin("Teja", 122, 780000, 3233);
+    Employee *employee[5];
+    employee[0] = new SalesManager("Bhagvat", 123, 500000, 1200, 22);
+    employee[1] = new AreaSalesManager("Bhagvat", 123, 690000, 1200, 2, "Pune");
+    employee[2] = new HR("Pinto", 124, 560000, 345);
+    employee[3] = new Admin("Teja", 122, 780000, 3233);
     for (int i = 0; i < 4; i++)
     {
-        cout<<emp[i]->getId()<<"\n";
-        cout<<emp[i]->getName()<<"\n";
-        cout<<emp[i]->getSalary()<<"\n";
+        employee[i]->display();
+    }
 
-        
- SalesManager* sm=(SalesManager*) dynamic_cast<SalesManager*>(emp[i]);
-       if(sm!=NULL) {
-	   
-       cout<<sm->getIncentive()<<"\n";
-       cout<<sm->getTarget()<<"\n";
-  		}
-   
-   HR* hr=(HR*) dynamic_cast<HR*>(emp[i]);      
-   if(hr!=NULL) 
-   {
-       cout<<hr->getCommission()<<"\n";
-      
-  }
-  
-//   if(strcmp(typeid(*emp[i]).name(),typeid(Admin).name())==0) {
-//  
-//            
-//        Admin* admin=(Admin*)emp[i];
-//       cout<<admin->getAllowence()<<"\n\n";
-//       	   	   	   	   	   	   	   		        
-//        				                
-//    }
-cout<<"\n\n";
-}    
+    // cout << "\n\nSales Manager Data :\n";
+    // SalesManager s1("Bhagvat", 123, 690000, 1200, 2);
+    // s1.display();
+
+    // cout << "\n\nArea Sales Manager Data :\n";
+    // AreaSalesManager As1("Bhagvat", 123, 690000, 1200, 2, "Pune");
+    // As1.display();
+
+    // cout << "\n\nHR Data :\n";
+    // HR hr("Pinto", 124, 560000, 345);
+    // hr.display();
+
+    // cout << "\n\nAdmin Data :\n";
+    // Admin admin("Teja", 122, 780000, 3233);
+    // admin.display();
+
     return 1;
 }
