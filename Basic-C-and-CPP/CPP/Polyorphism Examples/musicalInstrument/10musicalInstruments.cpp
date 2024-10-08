@@ -6,7 +6,7 @@ using namespace std;
 class MusicalInstrument
 {
 public:
-    virtual void playSound() // Made virtual for polymorphism
+    virtual void playSound() // 
     // void playSound() // Made virtual for polymorphism
     {
         cout << "\nMusical Instrument Playing";
