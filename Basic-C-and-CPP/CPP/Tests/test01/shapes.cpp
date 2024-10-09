@@ -3,23 +3,23 @@ using namespace std;
 class Circle
 {
 private:
-    double radious;
+    double radius;
 
 public:
     // Constructor
-    Circle(double radious)
+    Circle(double radius)
     {
-        this->radious = radious;
+        this->radius = radius;
     }
     Circle()
     {
-        this->radious = 0;
+        this->radius = 0;
     }
 
     // Setter
-    void setRadious(double radious) { this->radious = radious; }
+    void setRadius(double radius) { this->radius = radius; }
     // Getter
-    double getRadious() { return this->radious; }
+    double getRadius() { return this->radius; }
 };
 
 class Triangle
@@ -102,7 +102,7 @@ public:
     double calculateArea(Circle circle)
     {
         double PI = 3.14;
-        return PI * (circle.getRadious() * circle.getRadious());
+        return PI * (circle.getRadius() * circle.getRadius());
     }
 
     // Area of Triangle
@@ -134,7 +134,9 @@ int main()
         switch (choice)
         {
         case 1:
-            int base, height;
+        {
+
+            double base, height;
             cout << "\nEnter Base : ";
             cin >> base;
             cout << "\nEnter Height : ";
@@ -142,15 +144,20 @@ int main()
             Triangle triangle(base, height);
             cout << "\nArea Of Triangle : " << shape.calculateArea(triangle);
             break;
+        }
         case 2:
-            double radious;
-            cout << "\nEnter Radious : ";
-            cin >> radious;
-            Circle circle(radious);
+        {
+
+            double radius;
+            cout << "\nEnter radius : ";
+            cin >> radius;
+            Circle circle(radius);
             cout << "\nArea Of Circle : " << shape.calculateArea(circle);
             break;
+        }
         case 3:
-            int length, width;
+        {
+            double length, width;
             cout << "\nEnter length : ";
             cin >> length;
             cout << "\nEnter width : ";
@@ -158,20 +165,27 @@ int main()
             Rectangle rectangle(length, width);
             cout << "\nArea Of Rectangle : " << shape.calculateArea(rectangle);
             break;
+        }
         case 4:
-            int side;
+        {
+            double side;
             cout << "\nEnter Side : ";
             cin >> side;
             Square square(side);
             cout << "\nArea Of Square : " << shape.calculateArea(square);
             break;
-        case 0:
-            cout << "\nExiting.............................!!! ";
-            break;
+        }
 
         default:
+        {
             cout << "\nInvalid Choice....! ";
             break;
+        }
+        case 0:
+        {
+            cout << "\nExiting.............................!!! ";
+            break;
+        }
         }
 
     } while (choice != 0);
