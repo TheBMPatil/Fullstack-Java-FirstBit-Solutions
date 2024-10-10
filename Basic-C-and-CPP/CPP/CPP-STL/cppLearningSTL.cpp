@@ -28,6 +28,22 @@ void printVector(vector<int> nums)
     }
 }
 
+void printList(list<int> nums)
+{
+    for (auto it : nums)
+    {
+        cout << it << " ";
+    }
+}
+
+void printDeque(deque<int> nums)
+{
+    for (auto it : nums)
+    {
+        cout << it << " ";
+    }
+}
+
 void learnVectors()
 {
     vector<int> num;
@@ -166,10 +182,68 @@ void learnVectors()
     // cout << "\n empty result :" << v.empty();
 }
 
+void learnList()
+{
+    list<int> ls;
+    cout << "\nList Push Back :" << endl;
+    ls.push_back(2);
+    printList(ls);
+
+    cout << "\nList Emplace Back :" << endl;
+    ls.emplace_back(4);
+    printList(ls);
+
+    cout << "\nList Push Front :" << endl;
+    ls.push_front(5);
+    printList(ls);
+
+    cout << "\nList Emplace Front :" << endl;
+    ls.emplace_front(44);
+    printList(ls);
+}
+
+void learnDeque()
+{
+    deque<int> deq;
+    cout << "\nDeque Push Back :" << endl;
+    deq.push_back(2);
+    printDeque(deq);
+
+    cout << "\nDeque Emplace Back :" << endl;
+    deq.emplace_back(4);
+    printDeque(deq);
+
+    cout << "\nDeque Push Front :" << endl;
+    deq.push_front(5);
+    printDeque(deq);
+
+    cout << "\nDeque Emplace Front :" << endl;
+    deq.emplace_front(44);
+    printDeque(deq);
+
+    cout << "\nDeque Pop Back :" << endl;
+    deq.pop_back();
+    printDeque(deq);
+
+    cout << "\nDeque Pop Front :" << endl;
+    deq.pop_front();
+    printDeque(deq);
+
+    cout << "\nDeque  Front :" << endl;
+    cout << deq.front();
+    cout << "\nDeque  Back :" << endl;
+    cout << deq.back();
+    // printDeque(deq);
+}
+
+
+
 int main()
 {
     cout << "Shree Ganesh" << endl;
-    learnVectors();
+    learnDeque();
+    // learnList();
+    // learnVectors();
     // learnPairs();
     return 0;
 }
