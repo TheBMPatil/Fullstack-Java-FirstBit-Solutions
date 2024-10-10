@@ -200,6 +200,24 @@ public:
         temp.setImaginary(y);
         return temp;
     }
+    // Logical
+    //  Logical AND (&&)
+    int operator&&(Complex c)
+    {
+        return (this->real && c.getReal()) && (this->imaginary && c.getImaginary());
+    }
+
+    // Logical OR (||)
+    int operator||(Complex c)
+    {
+        return (this->real || c.getReal()) || (this->imaginary || c.getImaginary());
+    }
+
+    // Logical NOT (!)
+    int operator!()
+    {
+        return !this->real && !this->imaginary;
+    }
 };
 
 // Global Add
@@ -387,5 +405,37 @@ int main()
     c3 = c1--; // c1.operator++(int);
     cout << " is  : ";
     c3.display();
+
+    // Logical AND
+    cout << "\n\nLogical AND of: ";
+    c1.display();
+    cout << " && ";
+    c2.display();
+    cout << " is  = ";
+    if (c1 && c2)
+        cout << "True\n";
+    else
+        cout << "False\n";
+
+    // Logical OR
+    cout << "\nLogical OR of: ";
+    c1.display();
+    cout << " || ";
+    c2.display();
+    cout << " is  = ";
+    if (c1 || c2)
+        cout << "True\n";
+    else
+        cout << "False\n";
+
+    // Logical NOT
+    cout << "\nLogical NOT of: ";
+    c1.display();
+    cout << " is  = ";
+    if (!c1)
+        cout << "True\n";
+    else
+        cout << "False\n";
+
     return 1;
 }

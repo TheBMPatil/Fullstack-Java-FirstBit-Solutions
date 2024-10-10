@@ -142,8 +142,7 @@ public:
     }
 };
 
-
-int main() 
+int main()
 { // Laptops
     Laptop *laptops = new Laptop[7];
     laptops[0] = Laptop(101, "MacBook Pro");

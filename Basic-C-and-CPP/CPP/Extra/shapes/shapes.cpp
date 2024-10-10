@@ -7,7 +7,7 @@
 class Shape
 {
 public:
-    virtual void draw() = 0; // Pure virtual function
+    virtual void draw() = 0; //pure virtual 
 };
 
 // Derived class for Circle
@@ -17,7 +17,7 @@ public:
     void draw() override
     {
         // Draw a circle with center (200, 200) and radius 50
-        circle(200, 200, 50);
+        circle(200, 200, 80);
     }
 };
 
