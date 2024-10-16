@@ -4,31 +4,31 @@ class Laptop
 {
 private:
     int laptopID;
-    string LPName;
+    string laptopName;
 
 public:
     Laptop()
     {
         laptopID = 0;
-        LPName = "No Name";
+        laptopName = "No Name";
     }
-    Laptop(int laptopID, string LPName)
+    Laptop(int laptopID, string laptopName)
     {
         this->laptopID = laptopID;
-        this->LPName = LPName;
+        this->laptopName = laptopName;
     }
 
-    void setLPName(string LPName)
+    void setlaptopName(string laptopName)
     {
-        this->LPName = LPName;
+        this->laptopName = laptopName;
     }
     void setLaptopID(int laptopID)
     {
         this->laptopID = laptopID;
     }
-    string getLPName()
+    string getlaptopName()
     {
-        return this->LPName;
+        return this->laptopName;
     }
     int getLaptopID()
     {
@@ -37,7 +37,7 @@ public:
     void display()
     {
         cout << "\n\nLaptop ID : " << this->laptopID;
-        cout << "\tLaptop Name : " << this->LPName << endl;
+        cout << "\tLaptop Name : " << this->laptopName << endl;
     }
 };
 
@@ -54,14 +54,14 @@ public:
         id = 0;
         name = "No Name";
         // PC.setLaptopID(0);
-        PC.setLPName("No Laptop");
+        PC.setlaptopName("No Laptop");
     }
     Person(int id, string name)
     {
         this->id = id;
         this->name = name;
         // PC.setLaptopID(0);
-        PC.setLPName("No Laptop");
+        PC.setlaptopName("No Laptop");
     }
     Person(int id, string name, Laptop PC)
     {
@@ -152,6 +152,7 @@ int main()
     laptops[4] = Laptop(105, "Acer Predator");
     laptops[5] = Laptop(106, "Asus ROG");
     laptops[6] = Laptop(107, "Microsoft Surface");
+
     // persons
     Person *persons = new Person[10];
     persons[0] = Person(1, "Bhagvat", laptops[1]);
@@ -164,6 +165,7 @@ int main()
     persons[7] = Person(8, "Heidi");
     persons[8] = Person(9, "Ivan");
     persons[9] = Person(10, "Judy");
+
     // Chairs
     Chair *chairs = new Chair[20];
     chairs[0] = Chair(101, "Red", persons[0]);
@@ -181,12 +183,21 @@ int main()
     chairs[12] = Chair(112, "Red", persons[8]);
     chairs[13] = Chair(113, "Red", persons[9]);
     chairs[14] = Chair(114, "Red");
+
     // Hallmanagement Hall
     HallManagement hallManagement(123, "Game of Thrones", chairs);
-    // cout << chairs[0].getPerson().getPC().getLPName();
-    cout << "\nChair Id : " << hallManagement.getChairs()[0].getChairID();
-    cout << "\nName of person on chair : " << hallManagement.getChairs()[0].getPerson().getName();
-    cout << "\nLaptop name : " << hallManagement.getChairs()[0].getPerson().getPC().getLPName();
+
+    // cout << chairs[0].getPerson().getPC().getlaptopName();
+    for (int i = 0; i < 15; i++)
+    {
+        if (hallManagement.getChairs()[i].getChairID() == 113)
+        {
+
+            cout << "\nChair Id : " << hallManagement.getChairs()[i].getChairID();
+            cout << "\nName of person on chair : " << hallManagement.getChairs()[i].getPerson().getName();
+            cout << "\nLaptop name : " << hallManagement.getChairs()[i].getPerson().getPC().getlaptopName();
+        }
+    }
     // cout << "Hello";
     return 0;
 }
