@@ -3,15 +3,12 @@ using namespace std;
 
 int main()
 {
-    int rows = 9; // Adjusted to fit the vertical spread of the pattern
-    int cols = 5;
-
-    for (int i = 0; i < rows; i++)
+    int n = 10;
+    for (int i = 1; i < n; i++)
     {
-        for (int j = 0; j < cols; j++)
+        for (int j = 1; j < n; j++)
         {
-            // Condition to print * in the required "X" pattern
-            if (j == i || j == cols - i - 1)
+            if (j == i || j == n - i)
             {
                 cout << "*";
             }
@@ -19,7 +16,6 @@ int main()
             {
                 cout << " ";
             }
-            cout << "    "; // Add spacing between columns
         }
         cout << endl;
     }
