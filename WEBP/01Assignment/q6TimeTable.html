@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Table</title>
+    <style>
+      td {
+        padding: 10px;
+      }
+      .time {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="10px" style="padding: 5px; width: 500px">
+      <tr>
+        <th></th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednsday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+      </tr>
+      <tr>
+        <td class="time">1:00</td>
+        <td rowspan="2" style="background-color: rgb(248, 188, 109)">Office</td>
+        <td></td>
+        <td rowspan="2" style="background-color: rgb(248, 188, 109)">Office</td>
+        <td rowspan="8">Office Hours by Appt</td>
+        <td
+          rowspan="2"
+          style="background-color: rgb(248, 188, 109); text-align: center"
+        >
+          Office
+        </td>
+      </tr>
+      <tr>
+        <td class="time">1:30</td>
+        <td rowspan="2" style="background-color: rgb(158, 158, 158)">
+          Dept Meeting
+        </td>
+      </tr>
+      <tr>
+        <td class="time">2:00</td>
+        <td rowspan="3" style="background-color: rgb(9, 255, 0)">MAT 108</td>
+        <td rowspan="3" style="background-color: rgb(9, 255, 0)">MAT 108</td>
+        <td rowspan="3" style="background-color: rgb(9, 255, 0)">MAT 108</td>
+      </tr>
+      <tr>
+        <td class="time">2:30</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="time">3:00</td>
+        <td rowspan="3" style="background-color: rgb(158, 158, 158)">
+          EC Meeting
+        </td>
+      </tr>
+      <tr>
+        <td class="time">3:30</td>
+        <td rowspan="3" style="background-color: rgb(252, 121, 234)">
+          CSC 205
+        </td>
+        <td rowspan="3" style="background-color: rgb(252, 121, 234)">
+          CSC 205
+        </td>
+        <td rowspan="3" style="background-color: rgb(252, 121, 234)">
+          CSC 205
+        </td>
+      </tr>
+      <tr>
+        <td class="time">4:00</td>
+      </tr>
+      <tr>
+        <td class="time">4:30</td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

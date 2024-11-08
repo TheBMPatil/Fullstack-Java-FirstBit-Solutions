@@ -8,6 +8,7 @@ void merge(int *arr, int start, int mid, int end)
     int k = 0, i = start, j = mid + 1;
     int tempSize = (end - start) + 1;
     int merged[tempSize];
+
     while (i <= mid && j <= end)
     {
         if (arr[i] < arr[j])
@@ -19,12 +20,14 @@ void merge(int *arr, int start, int mid, int end)
             merged[k++] = arr[j++];
         }
     }
+
     while (i <= mid)
     {
         merged[k] = arr[i];
         i++;
         k++;
     }
+
     while (j <= end)
     {
         merged[k] = arr[j];
@@ -67,7 +70,7 @@ void displayArray(int *arr, int size)
 int main()
 {
     int size = 5;
-    int arr[size] = {25, 12, 85, 20, 18};
+    int arr[size] = {96, 12, 5, 80, 18};
     cout << "Original";
     displayArray(arr, size);
 
