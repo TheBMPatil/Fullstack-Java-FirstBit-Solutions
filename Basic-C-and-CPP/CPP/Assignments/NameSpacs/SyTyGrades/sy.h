@@ -1,17 +1,18 @@
 #include <bits/stdc++.h>
+#include <string>
 using namespace std;
-
+#pragma once
 namespace sy
 {
 
-    class SyMarks
+    class Marks
     {
     private:
         int ComputerTotal, MathsTotal, ElectronicsTotal;
 
     public:
-        SyMarks();
-        SyMarks(int, int, int);
+        Marks();
+        Marks(int, int, int);
         int getComputerTotal();
         int getMathsTotal();
         int getElectronicsTotal();

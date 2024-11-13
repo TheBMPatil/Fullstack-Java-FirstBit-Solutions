@@ -3,31 +3,31 @@
 namespace sy
 {
 
-    SyMarks::SyMarks()
+    Marks::Marks()
     {
         this->ComputerTotal = 0;
         this->ElectronicsTotal = 0;
         this->MathsTotal = 0;
     }
-    SyMarks::SyMarks(int CompTTL, int EleTTL, int MathTTL)
+    Marks::Marks(int CompTTL, int EleTTL, int MathTTL)
     {
         this->ComputerTotal = CompTTL;
         this->ElectronicsTotal = EleTTL;
         this->MathsTotal = MathTTL;
     }
-    int SyMarks::getComputerTotal()
+    int Marks::getComputerTotal()
     {
         return this->ComputerTotal;
     }
-    int SyMarks::getElectronicsTotal()
+    int Marks::getElectronicsTotal()
     {
         return this->ElectronicsTotal;
     }
-    int SyMarks::getMathsTotal()
+    int Marks::getMathsTotal()
     {
         return this->MathsTotal;
     }
-    void SyMarks::display()
+    void Marks::display()
     {
         cout << ":: SY TOTAL MARKS ::\n";
         cout << "ComputerTotal = " << this->ComputerTotal << endl;

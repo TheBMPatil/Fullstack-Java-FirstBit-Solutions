@@ -3,28 +3,26 @@
 namespace ty
 {
 
-    TyMarks::TyMarks()
+    Marks::Marks()
     {
         this->Theory = 0;
         this->Practical = 0;
-       
     }
-    TyMarks::TyMarks(int Theory, int Practical)
+    Marks::Marks(int Theory, int Practical)
     {
         this->Theory = Theory;
         this->Practical = Practical;
-        
     }
-    int TyMarks::getTheory()
+    int Marks::getTheory()
     {
         return this->Theory;
     }
-    int TyMarks::getPractical()
+    int Marks::getPractical()
     {
         return this->Practical;
     }
-    
-    // void TyMarks::display()
+
+    // void Marks::display()
     // {
     //     cout << ":: SY TOTAL MARKS ::\n";
     //     cout << "Theory = " << this->Theory << endl;
