@@ -6,9 +6,13 @@ class MyArray
 private:
     int *arr;
     int size;
+    int index;
 
 public:
-    MyArray(int size);
-
+    MyArray(int);
+    bool insert(int &);
+    bool remove(int &);
+    bool isFull();
+    bool isEmpty();
     void display();
 };
