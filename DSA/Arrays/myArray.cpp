@@ -7,6 +7,19 @@ MyArray::MyArray(int size)
     this->index = -1;
 }
 
+MyArray::MyArray(MyArray &obj)
+{
+    cout << "Inside copy Const..\n";
+    this->index = obj.index;
+    this->size = obj.size;
+    this->arr = new int[this->size];
+
+    for (int i = 0; i < this->size; i++)
+    {
+        this->arr[i] = obj.arr[i];
+    }
+}
+
 bool MyArray::isEmpty()
 {
     if (index == -1)
@@ -53,8 +66,19 @@ bool MyArray::remove(int &idx)
 
 void MyArray::display()
 {
-    for (int i = 0; i < this->size; i++)
+    if (isEmpty())
+    {
+        // cout << "\nArray Is EMPTY....!!\n";
+        return;
+    }
+    for (int i = 0; i <= this->index; i++)
     {
         cout << " [ " << arr[i] << " ] ";
     }
+}
+
+MyArray::~MyArray()
+{
+    delete[] arr;
+    cout << "\nArray Deleted..";
 }

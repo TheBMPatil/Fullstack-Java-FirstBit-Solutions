@@ -43,5 +43,9 @@ int main()
 
     } while (ch != 0);
 
+    MyArray arr2(arr);
+
+    arr2.display();
+
     return 0;
 }
