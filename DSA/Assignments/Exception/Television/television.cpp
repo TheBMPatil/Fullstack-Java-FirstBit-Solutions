@@ -7,7 +7,6 @@
 
 Television::Television() : modelNumber(0), screenSize(0), price(0.0) {}
 
-// Helper function to count digits in an integer
 int Television::countDigits(int number) {
     int count = 0;
     while (number != 0) {
@@ -42,7 +41,7 @@ void Television::inputDetails() {
         modelNumber = 0;
         screenSize = 0;
         price = 0.0;
-        throw; // Rethrow the exception
+        throw; 
     }
 }
 

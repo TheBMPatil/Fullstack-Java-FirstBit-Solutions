@@ -17,26 +17,23 @@ int main() {
                 break;
             }
 
-            // Prompt user for the first number
+    
             cout << "Enter the first number: ";
             if (!(cin >> num1)) {
                 throw "Invalid number entered!";
             }
 
-            // Prompt user for the operator
             cout << "Enter an operator (+, -, *, /): ";
             cin >> op;
             if (op != '+' && op != '-' && op != '*' && op != '/') {
                 throw "Invalid operator entered!";
             }
 
-            // Prompt user for the second number
             cout << "Enter the second number: ";
             if (!(cin >> num2)) {
                 throw "Invalid number entered!";
             }
 
-            // Perform the calculation
             double result = calculate(num1, num2, op);
             cout << "The result is: " << result << endl;
 

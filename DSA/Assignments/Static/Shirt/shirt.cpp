@@ -1,9 +1,8 @@
 #include "shirt.h"
 
-// Initialize static member
 int Shirt::prodCount = 0;
 
-// Default Constructor
+
 Shirt::Shirt()
 {
     this->sid = 0;
@@ -14,7 +13,6 @@ Shirt::Shirt()
     prodCount++;
 }
 
-// Parameterized Constructor
 Shirt::Shirt(int id, string name, string type, string size, double price)
 {
     this->sid = id;
@@ -25,7 +23,6 @@ Shirt::Shirt(int id, string name, string type, string size, double price)
     prodCount++;
 }
 
-// Display Shirt Details
 void Shirt::displayShirt()
 {
     cout << "\nId    : " << this->sid;
@@ -36,15 +33,14 @@ void Shirt::displayShirt()
     cout << "\nFinal Price (Adjusted) : " << calculateFinalPrice(sSize, price) << endl;
 }
 
-// Static Method to Adjust Price Based on Size
 double Shirt::calculateFinalPrice(const string &size, double basePrice)
 {
     if (size == "Medium")
-        return basePrice * 1.1; // 10% increase
+        return basePrice * 1.1; 
     else if (size == "Large")
-        return basePrice * 1.2; // 20% increase
+        return basePrice * 1.2; 
     else if (size == "X-Large")
-        return basePrice * 1.3; // 30% increase
+        return basePrice * 1.3; 
     else
-        return basePrice; // Small size, no change
+        return basePrice;
 }
