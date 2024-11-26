@@ -1,0 +1,232 @@
+PS D:\Fullstack-Java-FirstBit-Solutions>  & 'c:\Users\bhagv\.vscode\extensions\ms-vscode.cpptools-1.22.11-win32-x64\debugAdapters\bin\WindowsDebugLauncher.exe' '--stdin=Microsoft-MIEngine-In-kkpjdicm.mdj' '--stdout=Microsoft-MIEngine-Out-korud3lm.byn' '--stderr=Microsoft-MIEngine-Error-vdfdfppi.1bb' '--pid=Microsoft-MIEngine-Pid-slnxt1vw.bmo' '--dbgExe=C:\TDM-GCC-64\bin\gdb.exe' '--interpreter=mi' 
+Enter the total number of products you want to add: 5
+
+Menu:
+1) Add Mobile Data
+2) Display All Mobiles
+3) Sort Mobiles by IMIE
+4) Sort Mobiles by Price
+5) Search Mobile by IMIE
+0) Exit
+Enter your choice: 1
+Enter IMIE: 1234
+Enter Brand: Saamsung
+Enter Price: 12334
+
+Menu:
+1) Add Mobile Data
+2) Display All Mobiles
+3) Sort Mobiles by IMIE
+4) Sort Mobiles by Price
+5) Search Mobile by IMIE
+0) Exit
+Enter your choice: 2
+
+Mobile Info:
+IMIE: 1234
+Brand: Saamsung
+Price: 12334
+
+Menu:
+1) Add Mobile Data
+2) Display All Mobiles
+3) Sort Mobiles by IMIE
+4) Sort Mobiles by Price
+5) Search Mobile by IMIE
+0) Exit
+Enter your choice: 1
+Enter IMIE: 
+124
+Enter Brand: OnePluus 
+Enter Price: 
+4312
+
+Menu:
+1) Add Mobile Data
+2) Display All Mobiles
+3) Sort Mobiles by IMIE
+4) Sort Mobiles by Price
+5) Search Mobile by IMIE
+0) Exit
+Enter your choice: 1
+Enter IMIE: 7861
+Enter Brand: Nokia
+Enter Price: 200
+
+Menu:
+1) Add Mobile Data
+2) Display All Mobiles
+3) Sort Mobiles by IMIE
+4) Sort Mobiles by Price
+5) Search Mobile by IMIE
+0) Exit
+Enter your choice: 11
+Invalid choice
+
+Menu:
+1) Add Mobile Data
+2) Display All Mobiles
+3) Sort Mobiles by IMIE
+4) Sort Mobiles by Price
+5) Search Mobile by IMIE
+0) Exit
+Enter your choice: 1
+Enter IMIE: 100 
+Enter Brand: Motto
+Enter Price: 19000
+
+Menu:
+1) Add Mobile Data
+2) Display All Mobiles
+3) Sort Mobiles by IMIE
+4) Sort Mobiles by Price
+5) Search Mobile by IMIE
+0) Exit
+Enter your choice: 2
+
+Mobile Info:
+IMIE: 1234
+Brand: Saamsung
+Price: 12334
+
+Mobile Info:
+IMIE: 124
+Brand: OnePluus
+Price: 4312
+
+Mobile Info:
+IMIE: 7861
+Brand: Nokia
+Price: 200
+
+Mobile Info:
+IMIE: 100
+Brand: Motto
+Price: 19000
+
+Menu:
+1) Add Mobile Data
+2) Display All Mobiles
+3) Sort Mobiles by IMIE
+4) Sort Mobiles by Price
+5) Search Mobile by IMIE
+0) Exit
+Enter your choice: 3
+Mobiles sorted by IMIE.
+
+Menu:
+1) Add Mobile Data
+2) Display All Mobiles
+3) Sort Mobiles by IMIE
+4) Sort Mobiles by Price
+5) Search Mobile by IMIE
+0) Exit
+Enter your choice: 2
+
+Mobile Info:
+IMIE: 100
+Brand: Motto
+Price: 19000
+
+Mobile Info:
+IMIE: 124
+Brand: OnePluus
+Price: 4312
+
+Mobile Info:
+IMIE: 1234
+Brand: Saamsung
+Price: 12334
+
+Mobile Info:
+IMIE: 7861
+Brand: Nokia
+Price: 200
+
+Menu:
+1) Add Mobile Data
+2) Display All Mobiles
+3) Sort Mobiles by IMIE
+4) Sort Mobiles by Price
+5) Search Mobile by IMIE
+0) Exit
+Enter your choice:
+4
+Mobiles sorted by Price.
+
+Menu:
+1) Add Mobile Data
+2) Display All Mobiles
+3) Sort Mobiles by IMIE
+4) Sort Mobiles by Price
+5) Search Mobile by IMIE
+0) Exit
+Enter your choice: 2
+
+Mobile Info:
+IMIE: 7861
+Brand: Nokia
+Price: 200
+
+Mobile Info:
+IMIE: 124
+Brand: OnePluus
+Price: 4312
+
+Mobile Info:
+IMIE: 1234
+Brand: Saamsung
+Price: 12334
+
+Mobile Info:
+IMIE: 100
+Brand: Motto
+Price: 19000
+
+Menu:
+1) Add Mobile Data
+2) Display All Mobiles
+3) Sort Mobiles by IMIE
+4) Sort Mobiles by Price
+5) Search Mobile by IMIE
+0) Exit
+Enter your choice: 5
+Enter IMIE to search: 3423
+Mobile not found!
+
+Menu:
+1) Add Mobile Data
+2) Display All Mobiles
+3) Sort Mobiles by IMIE
+4) Sort Mobiles by Price
+5) Search Mobile by IMIE
+0) Exit
+Enter your choice: 5 
+Enter IMIE to search: 124
+
+Mobile Info:
+IMIE: 124
+Brand: OnePluus
+Price: 4312
+
+Menu:
+1) Add Mobile Data
+2) Display All Mobiles
+3) Sort Mobiles by IMIE
+4) Sort Mobiles by Price
+5) Search Mobile by IMIE
+0) Exit
+Enter your choice: 5
+Enter IMIE to search: 123
+Mobile not found!
+
+Menu:
+1) Add Mobile Data
+2) Display All Mobiles
+3) Sort Mobiles by IMIE
+4) Sort Mobiles by Price
+5) Search Mobile by IMIE
+0) Exit
+Enter your choice: 0
+Exiting 
+PS D:\Fullstack-Java-FirstBit-Solutions> 
