@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+int size = 5;
 void getIndices(string *arr, string start, string dest, int &sInd, int &eInd)
 {
     // cout << "\nInside getIndices....";
@@ -25,15 +25,26 @@ double calDist(int &start, int &stop, double *dist)
 
     double totalDist = 0.0;
 
-    for (int i = start; i < stop; i++)
+    int i = start;
+    while (i != stop)
     {
-        if (i == 5)
+        totalDist += dist[i++];
+        if (i == size - 1)
         {
             i = 0;
         }
-        totalDist += dist[i];
     }
-    // cout << "\nTotal Dist : " << totalDist;
+    // double totalDist = 0.0;
+
+    // for (int i = start; i < stop; i++)
+    // {
+    //     if (i == size - 1)
+    //     {
+    //         i = 0;
+    //     }
+    //     totalDist += dist[i++];
+    // }
+    cout << "\nTotal Dist : " << totalDist;
 
     return totalDist;
 }
@@ -59,7 +70,7 @@ double calculateFare(double *dist, string *strr)
 
 int main()
 {
-    int size = 5;
+
     string BusStops[5] = {"A", "B", "C", "D", "F"};
     double distances[5] = {100, 200, 500, 300, 600};
 
