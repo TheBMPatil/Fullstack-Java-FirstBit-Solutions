@@ -21,9 +21,9 @@ int main()
     {
         cout << "\n\n===================== MENU ====================";
         cout << "\n1) Display Linkedlist \t2) Insert At Begining ";
-        cout << "\n3) Insert At End      \t4) Insert at Position";
-        cout << "\n5) Remove first       \t6) Remove Last";
-        cout << "\n7) Remove Pos         \t0)EXIT\n::";
+        // cout << "\n3) Insert At End      \t4) Insert at Position";
+        // cout << "\n5) Remove first       \t6) Remove Last";
+        cout << "\n3)Insert At Position         \t0)EXIT\n::";
         cin >> ch;
         switch (ch)
         {
@@ -36,17 +36,17 @@ int main()
         {
             cout << "\nEnter Data to Insert :";
             cin >> data;
-            ls.insertBeg(data);
+            // ls.insertBeg(data);
         }
         break;
+        // case 3:
+        // {
+        //     cout << "\nEnter Data to Insert :";
+        //     cin >> data;
+        //     // ls.insertAtEnd(data);
+        // }
+        // break;
         case 3:
-        {
-            cout << "\nEnter Data to Insert :";
-            cin >> data;
-            ls.insertAtEnd(data);
-        }
-        break;
-        case 4:
         {
             cout << "\nEnter Data to Insert :";
             cin >> data;
@@ -55,44 +55,44 @@ int main()
             ls.insertAtPos(data, pos);
         }
         break;
-        case 5:
-        {
-            if (ls.removeFirst(data))
-            {
-                cout << "\nDeleted data : " << data;
-            }
-            else
-            {
-                cout << "\nLinkedList is Empty...";
-            }
-        }
-        break;
-        case 6:
-        {
-            if (ls.removeLast(data))
-            {
-                cout << "\nDeleted data : " << data;
-            }
-            else
-            {
-                cout << "\nLinkedList is Empty...";
-            }
-        }
-        break;
-        case 7:
-        {
-            cout << "\nEnter Position to Delete From :";
-            cin >> pos;
-            if (ls.removeAtPos(data, pos))
-            {
-                cout << "\nDeleted data : " << data;
-            }
-            else
-            {
-                cout << "\nLinkedList is Empty...";
-            }
-        }
-        break;
+        // case 5:
+        // {
+        //     if (ls.removeFirst(data))
+        //     {
+        //         cout << "\nDeleted data : " << data;
+        //     }
+        //     else
+        //     {
+        //         cout << "\nLinkedList is Empty...";
+        //     }
+        // }
+        // break;
+        // case 6:
+        // {
+        //     if (ls.removeLast(data))
+        //     {
+        //         cout << "\nDeleted data : " << data;
+        //     }
+        //     else
+        //     {
+        //         cout << "\nLinkedList is Empty...";
+        //     }
+        // }
+        // break;
+        // case 7:
+        // {
+        //     cout << "\nEnter Position to Delete From :";
+        //     cin >> pos;
+        //     if (ls.removeAtPos(data, pos))
+        //     {
+        //         cout << "\nDeleted data : " << data;
+        //     }
+        //     else
+        //     {
+        //         cout << "\nLinkedList is Empty...";
+        //     }
+        // }
+        // break;
         case 0:
             cout << "\n===============================================================================\n________________EXITING________________\n===============================================================================";
             break;
